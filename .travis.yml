@@ -3,6 +3,9 @@ language: python
 python:
   - "3.6"
 
+virtualenv:
+  system_site_packages: false
+	 
 install:
   - "pip install -q -r requirements.txt"
 
@@ -11,9 +14,5 @@ script:
 
 # -n   Run in nit-picky mode, warn about all missing references.
 # -W   Turn warnings into errors.
-
-env:
-  global:
-
 
 sudo: false # route your build to the container-based infrastructure for a faster build
