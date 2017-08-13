@@ -1,18 +1,19 @@
 language: python
 
+sudo: false
+
+env:
+  matrix:
+    - BUILD_CMD='html'
+            
 python:
-  - "3.6"
+    - 3.6
 
 virtualenv:
-  system_site_packages: false
-	 
+     system_site_packages: false
+
 install:
-  - "pip install -q -r requirements.txt"
+    - pip install -r requirements.txt
 
 script:
-  - "sphinx-build -nW -b html -d _build/doctrees . _build/html"
-
-# -n   Run in nit-picky mode, warn about all missing references.
-# -W   Turn warnings into errors.
-
-sudo: false # route your build to the container-based infrastructure for a faster build
+    - make $BUILD_CMD
