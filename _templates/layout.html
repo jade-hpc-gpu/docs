@@ -1,0 +1,18 @@
+{# Import the theme's layout. #}
+{% extends "!layout.html" %}
+{% block sidebar1 %}<h3><a href="{{ pathto(master_doc) }}">{{ _('Table Of Contents') }}</a></h3>
+{{ toctree(includehidden=True) }}<hr>{{ super() }}{% endblock %}
+
+
+{# Add some extra stuff before and use existing with 'super()' call. #}
+{% block footer %}
+  <p></p>
+  {% if prev %}
+<a href="{{ prev.link|e }}">Previous section</a>
+{% endif %}
+  {% if next %}
+| <a href="{{ next.link|e }}">Next section</a>
+{% endif %}
+
+  {{ super() }}
+{% endblock %}
