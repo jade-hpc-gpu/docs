@@ -1,0 +1,19 @@
+language: python
+
+python:
+  - "3.6"
+
+install:
+  - "pip install -q -r requirements.txt"
+
+script:
+  - "sphinx-build -nW -b html -d _build/doctrees . _build/html"
+
+# -n   Run in nit-picky mode, warn about all missing references.
+# -W   Turn warnings into errors.
+
+env:
+  global:
+
+
+sudo: false # route your build to the container-based infrastructure for a faster build
