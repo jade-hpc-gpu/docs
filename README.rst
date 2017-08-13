@@ -1,4 +1,6 @@
-
+.. image:: https://travis-ci.org/mozhgan-kch/JADE-HPC.svg?branch=master
+    :target: https://travis-ci.org/mozhgan-kch/JADE-HPC
+    
 JADE HPC Facility Documentation
 ===============================
 This is the source code for the documentation of JADE HPC facility user guide. It is written in the rst format. For a guide on the rst file format see `this <http://thomas-cokelaer.info/tutorials/sphinx/rest_syntax.html>`_ document. 
