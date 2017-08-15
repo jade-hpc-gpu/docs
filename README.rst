@@ -24,9 +24,9 @@ Building the documentation
 
 #. Install Python on your machine 
 
-#. Install sphinx and sphinx-autobuild: ::
+#. Install sphinx: ::
 
-	pip install sphinx sphinx-autobuild
+	pip install sphinx
 
 #. To build the HTML documentation run: ::
 
@@ -41,6 +41,10 @@ Building the documentation
 #. Build the documentation: ::
 
      make html
+     
+   Or if you don't have the ``make`` utility installed on your machine then serve with *sphinx* directly: ::
+
+    sphinx-build . ./html
 
 
 Continuous build and serve
@@ -52,7 +56,7 @@ The package `sphinx-autobuild <https://github.com/GaretJax/sphinx-autobuild>`_ p
 
 To start the autobuild process, run: ::
 
-    make livehtml
+    sphinx-autobuild . ./html
 
 The application also serves up the site at port ``8000`` by default at http://localhost:8000.
 
@@ -63,4 +67,10 @@ Making Changes to the Documentation
 The documentation consists of a series of `reStructured Text <http://sphinx-doc.org/rest.html>`_ files which have the ``.rst`` extension. These files are then automatically converted to HTMl and combined into the web version of the documentation by sphinx. It is important that when editing the files the syntax of the rst files is followed. 
 
 
-If there are any errors in your changes the build will fail and the documentaion  will not update, you can test your build locally by running ``make html``. The easiest way to learn what files should look like is to read the ``rst`` files already in the repository.
+If there are any errors in your changes the build will fail and the documentation  will not update, you can test your build locally by running ``make html``. The easiest way to learn what files should look like is to read the ``rst`` files already in the repository.
+
+Submitting Changes and Making Contributions
+-------------------------------------------
+
+Contributions should be made by forking the documentation site repo (this repo) and submitting a pull request. Pull requests will be merged by an Admin after review.
+
