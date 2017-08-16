@@ -1,5 +1,6 @@
-.. image:: https://travis-ci.org/mozhgan-kch/JADE-HPC.svg?branch=master
-    :target: https://travis-ci.org/mozhgan-kch/JADE-HPC
+.. image:: https://readthedocs.org/projects/jade-hpc/badge/?version=latest
+:target: http://jade-hpc.readthedocs.io/en/latest/?badge=latest
+:alt: Documentation Status
     
 JADE HPC Facility Documentation
 ===============================
