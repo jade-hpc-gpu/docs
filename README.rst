@@ -1,3 +1,6 @@
+.. image:: https://travis-ci.org/jade-hpc-gpu/docs.svg?branch=master
+    :target: https://travis-ci.org/jade-hpc-gpu/docs
+
 .. image:: https://readthedocs.org/projects/jade-hpc/badge/?version=latest
 :target: http://jade-hpc.readthedocs.io/en/latest/?badge=latest
 :alt: Documentation Status
