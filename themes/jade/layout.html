@@ -1,6 +1,7 @@
 {# Import the theme's layout. #}
 {% extends "sphinx_rtd_theme/layout.html" %}
 
+{% set extra_css_files = ['_static/customtheme.css'] %}
 
 
 {% block sidebar1 %}<h3><a href="{{ pathto(master_doc) }}">{{ _('Table Of Contents') }}</a></h3>
