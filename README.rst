@@ -18,7 +18,7 @@ Once you have the git repository locally on your computer, you will need to inst
 
 ::
 
-	pip install sphinx_bootstrap_theme
+	pip install sphinx_rtd_theme
 
 Once you have made your changes and updated your Fork on GitHub you will need to `Open a Pull Request <https://help.github.com/articles/using-pull-requests/>`_. All changes to the repository should be made through Pull Requests, including those made by the people with direct push access.
 
@@ -76,5 +76,4 @@ If there are any errors in your changes the build will fail and the documentatio
 Submitting Changes and Making Contributions
 -------------------------------------------
 
-Contributions should be made by forking the documentation site repo (this repo) and submitting a pull request. Pull requests will be merged by an Admin after review.
-
+Contributions should be made by forking the documentation site repo (this repo) and submitting a pull request. Pull requests will be merged by an Admin after review. 
