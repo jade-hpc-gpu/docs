@@ -1,8 +1,6 @@
 {# Import the theme's layout. #}
 {% extends "sphinx_rtd_theme/layout.html" %}
 
-
-
 {% block sidebar1 %}<h3><a href="{{ pathto(master_doc) }}">{{ _('Table Of Contents') }}</a></h3>
 {{ toctree(includehidden=True) }}<hr>{{ super() }}{% endblock %}
 

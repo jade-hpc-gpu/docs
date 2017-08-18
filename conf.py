@@ -77,15 +77,25 @@ todo_include_todos = False
 
 
 # -- Options for HTML output ----------------------------------------------
+on_rtd = os.environ.get('READTHEDOCS', None) == 'True' 
 
-import sphinx_rtd_theme
-#html_theme = "sphinx_rtd_theme"
-#html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
-
-html_theme = 'jade'
-
-html_theme_path = ['themes'] + [sphinx_rtd_theme.get_html_theme_path()]
-
+if not on_rtd:  # only import and set the theme if we're building docs locally   
+    import sphinx_rtd_theme                                                      
+    html_theme = 'jade'
+    html_theme_path = ['themes'] + [sphinx_rtd_theme.get_html_theme_path()]                 
+    # Override default css to get a larger width for local build                 
+    def setup(app):                                                              
+        #app.add_javascript("custom.js")                                         
+        app.add_stylesheet('customtheme.css')                                
+else:                                                                            
+    # Override default css to get a larger width for ReadTheDoc build            
+    html_context = {                                                             
+        'css_files': [                                                           
+            'https://media.readthedocs.org/css/sphinx_rtd_theme.css',            
+            'https://media.readthedocs.org/css/readthedocs-doc-embed.css',       
+            '_static/customtheme.css',                                       
+        ],                                                                       
+    }
 
 # (Optional) Logo. Should be small enough to fit the navbar (ideally 24x24).
 # Path should be relative to the ``_static`` files directory.
