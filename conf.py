@@ -57,18 +57,23 @@ todo_include_todos = False
 
 
 # -- Options for HTML output ----------------------------------------------
+
+html_theme = 'jade'
+html_theme_path = ['themes'] 
+    
+# Themes
 on_rtd = os.environ.get('READTHEDOCS', None) == 'True' 
 
 if not on_rtd:  # only import and set the theme if we're building docs locally   
     import sphinx_rtd_theme                                                      
-    html_theme = 'jade'
-    html_theme_path = ['themes'] + [sphinx_rtd_theme.get_html_theme_path()]                 
+    html_theme_path += [sphinx_rtd_theme.get_html_theme_path()]                 
     # Override default css to get a larger width for local build                 
     def setup(app):                                                              
         #app.add_javascript("custom.js")                                         
         app.add_stylesheet('customtheme.css')                                
 else:                                                                            
-    # OIf building on RTD then we need to manually override the css to include the theme customisation          
+    # OIf building on RTD then we need to manually override the css to include the theme customisation   
+   
     html_context = {                                                             
         'css_files': [                                                           
             'https://media.readthedocs.org/css/sphinx_rtd_theme.css',            
