@@ -1,6 +1,10 @@
 {# Import the theme's layout. #}
 {% extends "sphinx_rtd_theme/layout.html" %}
 
+{% block extrahead %}
+    <link href="{{ pathto("_static/customtheme.css", True) }}" rel="stylesheet" type="text/css">
+{% endblock %}
+
 {% block sidebar1 %}<h3><a href="{{ pathto(master_doc) }}">{{ _('Table Of Contents') }}</a></h3>
 {{ toctree(includehidden=True) }}<hr>{{ super() }}{% endblock %}
 
