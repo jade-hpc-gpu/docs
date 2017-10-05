@@ -57,6 +57,8 @@ The following brief notes explain how to run the various applications.
    :maxdepth: -1
    :hidden:
 
-   Gromacs    
+   Modules
+   Slurm
+   Gromacs
    NAMD
    containers

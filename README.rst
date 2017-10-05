@@ -32,6 +32,18 @@ Building the documentation
 
 	pip install sphinx
 
+   or ::
+
+        conda install sphinx
+
+#. Install sphinx_rtd_theme: ::
+
+	pip install sphinx_rtd_theme
+
+   or ::
+
+        conda install sphinx_rtd_theme
+
 #. To build the HTML documentation run: ::
 
     make html
@@ -40,15 +52,6 @@ Building the documentation
 
     sphinx-build . ./html
 
-
-
-#. Build the documentation: ::
-
-     make html
-     
-   Or if you don't have the ``make`` utility installed on your machine then serve with *sphinx* directly: ::
-
-    sphinx-build . ./html
 
 
 Continuous build and serve
