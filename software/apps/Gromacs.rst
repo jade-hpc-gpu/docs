@@ -1,4 +1,4 @@
-.. _gromacs
+.. _gromacs:
 
 Gromacs
 =======
@@ -9,18 +9,18 @@ The code was compiled using OpenMPI v1.10.5a1 and GCC v4.8.4 with the following 
 
 ::
 
-    CC=mpicc CXX=mpicxx cmake /jmain01/home/atostest/Building/gromacs-2016.3 
-    -DGMX_OPENMP=ON 
-    -DGMX_GPU=ON 
-    -DGPU_DEPLOYMENT_KIT_ROOT_DIR=/usr/local/cuda-8.0/targets/x86_64-linux 
-    -DCUDA_TOOLKIT_ROOT_DIR=/usr/local/cuda-8.0/targets/x86_64-linux 
-    -DNVML_INCLUDE_DIR=/usr/local/cuda-8.0/targets/x86_64-linux/include 
-    -DNVML_LIBRARY=/usr/lib/nvidia-375/libnvidia-ml.so 
-    -DHWLOC_INCLUDE_DIRS=/usr/mpi/gcc/openmpi-1.10.5a1/include/openmpi/opal/mca/hwloc/hwloc191/hwloc/include 
-    -DGMX_BUILD_OWN_FFTW=ON 
-    -DGMX_PREFER_STATIC_LIBS=ON 
-    -DCMAKE_BUILD_TYPE=Release 
-    -DGMX_BUILD_UNITTESTS=ON 
+    CC=mpicc CXX=mpicxx cmake /jmain01/home/atostest/Building/gromacs-2016.3
+    -DGMX_OPENMP=ON
+    -DGMX_GPU=ON
+    -DGPU_DEPLOYMENT_KIT_ROOT_DIR=/usr/local/cuda-8.0/targets/x86_64-linux
+    -DCUDA_TOOLKIT_ROOT_DIR=/usr/local/cuda-8.0/targets/x86_64-linux
+    -DNVML_INCLUDE_DIR=/usr/local/cuda-8.0/targets/x86_64-linux/include
+    -DNVML_LIBRARY=/usr/lib/nvidia-375/libnvidia-ml.so
+    -DHWLOC_INCLUDE_DIRS=/usr/mpi/gcc/openmpi-1.10.5a1/include/openmpi/opal/mca/hwloc/hwloc191/hwloc/include
+    -DGMX_BUILD_OWN_FFTW=ON
+    -DGMX_PREFER_STATIC_LIBS=ON
+    -DCMAKE_BUILD_TYPE=Release
+    -DGMX_BUILD_UNITTESTS=ON
     -DCMAKE_INSTALL_PREFIX=/jmain01/home/atostest/gromacs-2016.3
 
 The following is an example Slurm script to run the code using one of the regression tests from the installation:
