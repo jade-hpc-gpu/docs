@@ -79,7 +79,7 @@ A submission script is a Linux shell script that
 * describes the processing to carry out (e.g. the application, its input and output, etc.) and
 * requests computer resources (number of cpus, amount of memory, etc.) to use for processing.
 
-The simplest case is that of a job that requires a single node (this is the smallest unit we allocate on arcus-b) with the following requirements:
+The simplest case is that of a job that requires a single node with the following requirements:
 
 * the job uses 1 node,
 * the application is a single process,
