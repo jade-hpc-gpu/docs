@@ -49,7 +49,6 @@ To list the containers and version available on the system do:
 The following brief notes explain how to run the various applications.
 
 .. toctree::
-    :hidden:
     :maxdepth: 2
     :glob:
 

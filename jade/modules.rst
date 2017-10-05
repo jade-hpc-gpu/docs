@@ -1,81 +1,58 @@
 .. _modules:
 
-Activating software using Environment Modules
-=============================================
+The ``module`` tool
+===================
 
-Overview and rationale
-----------------------
+Introduction
+------------
 
-'Environment Modules' are the mechanism by which much software is made available to the users of the JADE cluster.
-To make a particular piece of software available a user will *load* a 'module' e.g.
-on JADE, you can load a particular version of the ``gromacs`` application (version 2016.3) with: ::
+The Linux operating system makes extensive use of the *working environment*, which is a collection of individual environment variables.  An environment variable is a named object in the Linux shell that contains information used by one or more applications; two of the most used such variables are ``$HOME``, which defines a user's home directory name, and ``$PATH``, which represents a list paths to different executables.  A large number of environment variables are already defined when a Linux shell is open but the environment can be customised, either by defining new environment variables relevant to certain applications or by modifying existing ones (e.g. adding a new path to ``$PATH``).
 
-    module load gromacs/2016.3
+``module`` is a Software Environment Management tool, which is used to manage of working environment in preparation for running the applications installed on the JADE.  By loading the module for a certain installed application, the environment variables that are relevant for that application are automatically defined or modified.
 
-This command manipulates `environment variables <https://en.wikipedia.org/wiki/Environment_variable>`_ to make this piece of software available.
-If you then want to switch to using a different version of ``gromacs`` (should another be installed on the cluster you are using) then you can
-unload ``gromacs/2016.3`` and load the other.
+Useful commands
+---------------
 
-You may wonder why modules are necessary: why not just install packages provided by the vender of the operating system installed on the cluster?
-In shared high-performance computing environments such as JADE:
+The module utility is invoked by the command ``module``.  This command must be followed by an instruction of what action is required and by the details of a pre-defined module.
 
-* users typically want control over the version of applications that is used (e.g. to give greater confidence that results of numerical simulations can be reproduced);
-* users may want to use applications built using compiler X rather than compiler Y as compiler X might generate faster code and/or more accurate numerical results in certain situations;
-* users may want a version of an application built with support for particular parallelisation mechanisms such as MPI for distributing work between machines, OpenMP for distributing work between CPU cores or CUDA for parallelisation on GPUs);
-* users may want an application built with support for a particular library.
+The utility displays a help menu by doing::
 
-There is therefore a need to maintain multiple versions of the same applications on JADE.
-Module files allow users to select and use the versions they need for their research.
+  module help
 
-If you switch to using a cluster other than JADE then you will likely find that environment modules are used there too.
+The utility displays the available modules by issuing the command::
 
+  module avail
 
-Basic guide
------------
+or displays only the information related to a certain software package, *e.g.*::
 
-You can list all (loaded and unloaded) modules on JADE using: ::
+  module avail pgi
 
-    module avail
+The avail instruction displays all the versions available for the installed applications, and shows which version is pre-defined as being the default. A software package is loaded with the load or the add instructions, *e.g.*::
 
-You can then load a module using e.g.: ::
+  module load pgi
 
-    module load gromacs/2016.3
+If no version is specified, the default version of the software is loaded. Specific versions, other than the default can be loaded by specifying the version, *e.g.*::
 
-This will only work on worker nodes and will not have an effect on login nodes as software provided using module files is not installed on the login nodes.
+  module load pgi/2017
 
-You can then load further modules e.g.::
+The modules that are already loaded by users in a session are displayed with the command::
 
-    module load NAMD/2.12
+  module list
 
-If you want to stop using a module (by undoing the changes that loading that module made to your environment): ::
+A module can be "unloaded" with the unload or rm instructions, *e.g.*::
 
-    module unload NAMD/2.12
+  module unload pgi
+  module load pgi/2017
 
-or to unload all loaded modules: ::
+Lastly, all modules loaded in a session can be "unloaded" with a single command:::
 
-    module purge
-
-To learn more about what software is available on the system and discover the names of module files, you can view the online documentation for
-
-    * :ref:`software on JADE <software>`
+  module purge
 
 
-You can search for a module using: ::
+Best practices
+--------------
 
-    module avail |& grep -i somename
+``module`` can be used to modify the environment after login, *e.g.* to load the Portland compilers in order to build an application.  However, most frequent usage will be to load an already built application, and the best way to do this is from within the submission script.  For example, assuming a job uses the NAMD molecular dynamics package, the submission script contains::
 
-The name of a Module should tell you:
-
-* the type of software (application, library, development tool (e.g. compiler), parallel computing software);
-* the name and version of the software;
-* the name and version of compiler that the software was built using (if applicable; not all installed software was installed from source);
-* the name and version of used libraries that distinguish the different installs of a given piece of software (e.g. the version of OpenMPI an application was built with).
-
-Some other things to be aware of:
-
-* You can load and unload modules in both interactive and batch jobs;
-* Modules may themselves load other modules.  If this is the case for a given module then it is typically noted in our documentation for the corresponding software;
-* The order in which you load modules may be significant (e.g. if module A sets ``SOME_ENV_VAR=apple`` and module B sets ``SOME_ENV_VAR=pear``);
-.. TODO Need to confirm the following -> * Some related module files have been set up so that they are mutually exclusive e.g.  the modules ``dev/NAG/6.0`` and ``dev/NAG/6.1`` cannot be loaded simultaneously (as users should never want to have both loaded).
-
-.. TODO Add a 'behind the scenes' on the custom use of own modules
+  module purge
+  module load NAMD
