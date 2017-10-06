@@ -1,4 +1,4 @@
-.. _modules
+.. _modules:
 
 The ``module`` tool
 ===================
@@ -8,7 +8,7 @@ Introduction
 
 The Linux operating system makes extensive use of the *working environment*, which is a collection of individual environment variables.  An environment variable is a named object in the Linux shell that contains information used by one or more applications; two of the most used such variables are ``$HOME``, which defines a user's home directory name, and ``$PATH``, which represents a list paths to different executables.  A large number of environment variables are already defined when a Linux shell is open but the environment can be customised, either by defining new environment variables relevant to certain applications or by modifying existing ones (e.g. adding a new path to ``$PATH``).
 
-``module`` is a Software Environment Management tool, which is used to manage of working environment in preparation for running the applications installed on the JADE.  By loading the module for a certain installed application, the environment variables that are relevant for that application are automatically defined or modified.
+``module`` is a Software Environment Management tool, which is used to manage the working environment in preparation for running the applications installed on JADE.  By loading the module for a certain installed application, the environment variables that are relevant for that application are automatically defined or modified.
 
 Useful commands
 ---------------

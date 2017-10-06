@@ -1,6 +1,6 @@
 
 More Information
-################
+================
 
 JADE Web site: http://www.arc.ox.ac.uk/content/jade
 

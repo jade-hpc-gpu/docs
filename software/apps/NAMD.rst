@@ -5,13 +5,13 @@ NAMD
 
 The latest version of the source code was used and built using OpenMPI v1.10.5a1 and GCC v4.8.4 following instructions from: http://www.nvidia.com/object/gpu-accelerated-applications-namd-installation.html
 
-Charm++ was built using: 
+Charm++ was built using:
 
 ::
 
     ./build charm++ verbs-linux-x86_64 gcc smp --with-production
 
-NAMD was built using the following: 
+NAMD was built using the following:
 
 ::
 
@@ -36,8 +36,8 @@ For the decision on the number of threads to use per node, take a look at: http:
     sed 's/^/host /' hf-1 > hf && rm hf-1
     echo 'group main ++shell ssh' | cat - hf  > hf-1 && mv hf-1 hf
 
-    $NAMDROOT/charmrun ++p 64 ++ppn 4 $NAMDROOT/namd2 
-    ++nodelist hf +setcpuaffinity +pemap 0-19,20-39 +commap 0,20 
+    $NAMDROOT/charmrun ++p 64 ++ppn 4 $NAMDROOT/namd2
+    ++nodelist hf +setcpuaffinity +pemap 0-19,20-39 +commap 0,20
     +devices 3,1 src/alanin
 
     rm hf

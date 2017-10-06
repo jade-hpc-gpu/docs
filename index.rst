@@ -13,7 +13,8 @@ Run by Research Software Engineering' Research Computing Group with additional s
 .. toctree::
    :maxdepth: -1
    :hidden:
-   
+
    jade/index
+   software/index
    more_info
    troubleshooting

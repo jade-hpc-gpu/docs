@@ -1,16 +1,14 @@
-.. _slurm
+.. _slurm:
 
-Slurm
-=====
+The Slurm Scheduler
+===================
 
 Introduction
 ------------
 
 Running software on the JADE system is accomplished via batch jobs, *i.e.* in an unattended, non-interactive manner.  Typically a user logs in to the JADE login nodes, prepares a job script and submits it to the job queue.
 
-Jobs on JADE are managed by the Slurm_ batch system, which is in charge of
-
-.. _Slurm: https://slurm.schedmd.com/
+Jobs on JADE are managed by the `Slurm <https://slurm.schedmd.com>`_ batch system, which is in charge of:
 
 * allocating the computer resources requested for the job,
 * running the job and
@@ -81,7 +79,7 @@ A submission script is a Linux shell script that
 * describes the processing to carry out (e.g. the application, its input and output, etc.) and
 * requests computer resources (number of cpus, amount of memory, etc.) to use for processing.
 
-The simplest case is that of a job that requires a single node (this is the smallest unit we allocate on arcus-b) with the following requirements:
+The simplest case is that of a job that requires a single node with the following requirements:
 
 * the job uses 1 node,
 * the application is a single process,
@@ -121,7 +119,7 @@ The script continues with a series of lines starting with ``#``, which represent
 
 The resource request ``#SBATCH --nodes=n`` determines how many compute nodes a job are allocated by the scheduler; only 1 node is allocated for this job.
 
-The maximum walltime is specified by ``#SBATCH --time=T``, where ``T`` has format **h:m:s**.  Normally, a job is expected to finish before the specified maximum walltime.  After the walltime reaches the maximum, the job terminates regardless whether the job processes are still running or not. 
+The maximum walltime is specified by ``#SBATCH --time=T``, where ``T`` has format **h:m:s**.  Normally, a job is expected to finish before the specified maximum walltime.  After the walltime reaches the maximum, the job terminates regardless whether the job processes are still running or not.
 
 The name of the job can be specified too with ``#SBATCH --job-name=name``.
 

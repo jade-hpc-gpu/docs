@@ -12,7 +12,7 @@ This is 6.6TB in size but any data will be lost once the interactive session is 
 1.Interactive Mode
 ------------------
 
-All the applications in containers can be launched interactively in the same way using 1 compute node at a time. The number of GPUs to be used per node is requested using the ``gres`` option. To request an interactive session on a compute node the following command is issued from the login node: 
+All the applications in containers can be launched interactively in the same way using 1 compute node at a time. The number of GPUs to be used per node is requested using the ``gres`` option. To request an interactive session on a compute node the following command is issued from the login node:
 
 ::
 
@@ -23,22 +23,22 @@ This command will show the following, which is now running on a compute node:
 ::
 
     ================
-    ==NVIDIA Caffe== 
+    ==NVIDIA Caffe==
     ================
-    
+
     NVIDIA Release 17.04 (build 26740)
-    
+
     Container image Copyright (c) 2017, NVIDIA CORPORATION.  All rights reserved.
     Copyright (c) 2014, 2015, The Regents of the University of California (Regents)
     All rights reserved.
-    
+
     Various files include modifications (c) NVIDIA CORPORATION.  All rights reserved.
     NVIDIA modifications are covered by the license terms that apply to the underlying project or file.
-    
+
     groups: cannot find name for group ID 1002
     I have no name!@124cf0e3582e:/home_directory$
 
-Note. The warnings in the last two lines can be ignored. To exit the container, issue the "exit" command. To launch the other containers the commands are: 
+Note. The warnings in the last two lines can be ignored. To exit the container, issue the "exit" command. To launch the other containers the commands are:
 
 ::
 
@@ -48,7 +48,7 @@ Note. The warnings in the last two lines can be ignored. To exit the container, 
 2.Batch Mode
 ------------
 
-There are wrappers for launching the containers in batch mode. For example, to launch the Torch application change directory to where the launching script is, in this case called ``submit-char.sh``: 
+There are wrappers for launching the containers in batch mode. For example, to launch the Torch application change directory to where the launching script is, in this case called ``submit-char.sh``:
 
 ::
 
