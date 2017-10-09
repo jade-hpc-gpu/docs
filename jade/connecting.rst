@@ -3,7 +3,7 @@
 Connecting to the cluster using SSH
 ===================================
 
-The most versatile way to **run commands and submit jobs** on one of the clusters is to
+The most versatile way to **run commands and submit jobs** on the cluster is to
 use a mechanism called `SSH <https://en.wikipedia.org/wiki/Secure_Shell>`__,
 which is a common way of remotely logging in to computers
 running the Linux operating system.
@@ -69,30 +69,3 @@ Here you need to replace ``$USER`` with your username (e.g. ``te1st-test``)
 This should give you a prompt resembling the one below: ::
 
     te1st-test@dgj223:~$
-
-At this prompt, to run ``bash`` in an interactive working node, type: ::
-
-    srun --pty bash
-
-Like this: ::
-
-    te1st-test@dgj223:~$ srun --pty bash
-
-Notice that you have been moved from the head node ``dgj223`` to the working node ``dgj113`` ready to run jobs interactively: ::
-
-    te1st-test@dgj113:~$
-
-
-.. note::
-
-    When you login to a cluster you reach one of two login nodes.
-    You **should not** run applications on the login nodes.
-    Running ``srun`` gives you an interactive terminal
-    on one of the many worker nodes in the cluster.
-
-
-
-What Next?
-----------
-
-Now you have connected to a cluster, you can look at how to submit jobs with :ref:`Slurm <slurm>` or look at the software installed on :ref:`JADE <software>`.
