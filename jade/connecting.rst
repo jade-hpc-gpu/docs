@@ -61,6 +61,15 @@ Here you need to replace ``$USER`` with your username (e.g. ``te1st-test``)
 
 .. note::
 
+  JADE has multiple front-end systems, and because of this some SSH software operating under stringent security settings might give **warnings about possible man-in-the-middle attacks** because of apparent changes in machine settings. This is a known issue and is being addressed, but in the meantime **these warnings can be safely ignored**
+
+  To ignore the warning, add the option `-o StrictHostKeyChecking=no` to your SSH command e.g.:
+      `ssh -o StrictHostKeyChecking=no -l $USER jade.hartree.stfc.ac.uk`
+  Or in your `~/.ssh/config` file, add the line:
+     `StrictHostKeyChecking no`
+
+.. note::
+
     **macOS users**: if this fails then:
 
     * Check that your `XQuartz <https://www.xquartz.org/>`_ is up to date then try again *or*
