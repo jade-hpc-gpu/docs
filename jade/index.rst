@@ -20,3 +20,4 @@ If you have not used a High Performance Computing (HPC) cluster, the Linux opera
    scheduler/index
    modules
    containers
+   pi-projectmanager
