@@ -3,10 +3,17 @@
 NAMD
 ====
 
-Job scripts
------------
+.. sidebar:: NAMD
+
+   :URL: http://www.ks.uiuc.edu/Research/namd/
+   :URL: https://www.nvidia.com/en-us/data-center/gpu-accelerated-applications/namd/
+
 
 NAMD is a parallel molecular dynamics code designed for high-performance simulation of large biomolecular systems.  NAMD scales to hundreds of cores for typical simulations, however NAMD calculations are restricted to at most a single node on the JADE service.
+
+
+Job scripts
+-----------
 
 Below is an example of a NAMD job script
 

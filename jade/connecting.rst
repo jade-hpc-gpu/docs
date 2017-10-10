@@ -3,16 +3,7 @@
 Connecting to the cluster using SSH
 ===================================
 
-The most versatile way to **run commands and submit jobs** on the cluster is to
-use a mechanism called `SSH <https://en.wikipedia.org/wiki/Secure_Shell>`__,
-which is a common way of remotely logging in to computers
-running the Linux operating system.
-
-To connect to another machine using SSH you need to
-have a SSH *client* program installed on your machine.
-macOS and Linux come with a command-line (text-only) SSH client pre-installed.
-On Windows there are various graphical SSH clients you can use,
-including *MobaXTerm*.
+To log onto the JADE cluster you must use `SSH <https://en.wikipedia.org/wiki/Secure_Shell>`_, which is a common way of remotely logging in to computers running the Linux operating system.  To do this, you need to have a SSH *client* program installed on your machine. macOS and Linux come with a command-line (text-only) SSH client pre-installed.  On Windows there are various graphical SSH clients you can use, including *MobaXTerm*.
 
 
 SSH client software on Windows
@@ -52,21 +43,11 @@ Open a terminal (e.g. *Gnome Terminal* on Linux or *Terminal* on macOS) and then
 Establishing a SSH connection
 -----------------------------
 
-Once you have a terminal open run the following command to
-log in to a cluster: ::
-
+Once you have a terminal open, run the following command to log into one of the JADE front-end nodes:
+::
     ssh -l $USER jade.hartree.stfc.ac.uk
 
 Here you need to replace ``$USER`` with your username (e.g. ``te1st-test``)
-
-.. note::
-
-  JADE has multiple front-end systems, and because of this some SSH software operating under stringent security settings might give **warnings about possible man-in-the-middle attacks** because of apparent changes in machine settings. This is a known issue and is being addressed, but in the meantime **these warnings can be safely ignored**
-
-  To ignore the warning, add the option `-o StrictHostKeyChecking=no` to your SSH command e.g.:
-      `ssh -o StrictHostKeyChecking=no -l $USER jade.hartree.stfc.ac.uk`
-  Or in your `~/.ssh/config` file, add the line:
-     `StrictHostKeyChecking no`
 
 .. note::
 
@@ -75,6 +56,16 @@ Here you need to replace ``$USER`` with your username (e.g. ``te1st-test``)
     * Check that your `XQuartz <https://www.xquartz.org/>`_ is up to date then try again *or*
     * Try again with ``-Y`` instead of ``-X``
 
-This should give you a prompt resembling the one below: ::
 
-    te1st-test@dgj223:~$
+.. note::
+
+   JADE has multiple front-end systems, and because of this some SSH software operating under stringent security settings might give warnings about possible man-in-the-middle attacks because of apparent changes in machine settings. This is a known issue and is being addressed, but in the meantime these warnings can be safely ignored.
+
+
+.. note::
+
+    When you login to a cluster you reach one of two login nodes.
+    You **should not** run applications on the login nodes.
+    Running ``srun`` gives you an interactive terminal
+    on one of the many worker nodes in the cluster.
+
