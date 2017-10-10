@@ -28,12 +28,12 @@ http://community.hartree.stfc.ac.uk/wiki/site/admin/safe%20user%20guide.html
 
 Once your SAFE account is established, login to it and click on "Request Join Project".
 
-From the drop-down list select the appropriate project, enter the signup code which you should have been given by the project PI or manager, and then click "Request".
+From the drop-down list select the appropriate **project**, enter the **signup code** which you should have been given by the project PI or manager, and then click "Request".
 
 The approval process goes through several steps:
-a) approval by the PI or project manager -- once this is done the SAFE status changes to Pending
-b) initial account setup --  once this is done the SAFE status changes to Active
-c) completion of account setup -- once this is done you will get an email confirming you are all set, and your SAFE account will have full details on your new project account
+  a) approval by the PI or project manager -- once this is done the SAFE status changes to Pending
+  b) initial account setup --  once this is done the SAFE status changes to Active
+  c) completion of account setup -- once this is done you will get an email confirming you are all set, and your SAFE account will have full details on your new project account
 
 This process shouldn't take more than 2 working days.  If it takes more than that, check whether the PI or project manager is aware that you have applied, and therefore your application needs their approval through the SAFE system.
 

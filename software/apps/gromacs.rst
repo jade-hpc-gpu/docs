@@ -3,10 +3,16 @@
 Gromacs
 =======
 
-Job scripts
------------
+.. sidebar:: Gromacs
+
+  :URL: http://www.gromacs.org/
+  :URL: https://www.nvidia.com/en-us/data-center/gpu-accelerated-applications/gromacs/
+
 
 Gromacs is a versatile package for molecular dynamics simulations, which solves the Newtonian equations of motion for systems with hundreds to millions of particles.  Although the software scales well to hundreds of cores for typical simulations, Gromacs calculations are restricted to at most a single node on the JADE service.
+
+Job scripts
+-----------
 
 The following is an example Slurm script to run the code using one of the regression tests from the installation:
 
