@@ -55,5 +55,6 @@ JADE hardware consists of:
 
    jade/index
    software/index
+   cuda/index
    more_info
    troubleshooting
