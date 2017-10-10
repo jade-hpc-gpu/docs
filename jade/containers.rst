@@ -9,8 +9,25 @@ Any files you copy into ``/home_directory`` will have the same userid as normal 
 
 This is 6.6TB in size but any data will be lost once the interactive session is ended. There are two ways of interacting with the containerised applications.
 
-1.Interactive Mode
-------------------
+Listing available containers
+----------------------------
+
+To list the containers and version available on the system do:
+
+::
+
+    $ containers
+    REPOSITORY                  TAG                 IMAGE ID            CREATED             SIZE
+    nvcr.io/nvidia/tensorflow   17.07               94b1afe1821c        3 months ago        4.404 GB
+    nvidia/cuda                 latest              15e5dedd88c5        5 months ago        1.67 GB
+    nvcr.io/nvidia/caffe        17.04               87c288427f2d        5 months ago        2.794 GB
+    nvcr.io/nvidia/theano       17.04               24943feafc9b        6 months ago        2.386 GB
+    nvcr.io/nvidia/torch        17.04               a337ffb42c8e        6 months ago        2.9 GB
+    Last updated:Tue Oct 10 01:00:02 BST 2017
+
+
+Interactive Mode
+----------------
 
 All the applications in containers can be launched interactively in the same way using 1 compute node at a time. The number of GPUs to be used per node is requested using the ``gres`` option. To request an interactive session on a compute node the following command is issued from the login node:
 
@@ -45,8 +62,8 @@ Note. The warnings in the last two lines can be ignored. To exit the container, 
     srun --gres=gpu:8 --pty /jmain01/apps/docker/theano 17.04
     srun --gres=gpu:4 --pty /jmain01/apps/docker/torch 17.04
 
-2.Batch Mode
-------------
+Batch Mode
+----------
 
 There are wrappers for launching the containers in batch mode. For example, to launch the Torch application change directory to where the launching script is, in this case called ``submit-char.sh``:
 
@@ -60,7 +77,6 @@ A Slurm batch script is used to launch the code, such as:
 
     #!/bin/bash
     #SBATCH --nodes=1
-    #SBATCH -p all
     #SBATCH -J Torch
     #SBATCH --gres=gpu:8
     #SBATCH --time=01:00:00

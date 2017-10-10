@@ -16,8 +16,8 @@ If you have not used a High Performance Computing (HPC) cluster, the Linux opera
    :maxdepth: -1
 
    getting-account
+   pi-projectmanager
    connecting
    scheduler/index
    modules
    containers
-   pi-projectmanager
