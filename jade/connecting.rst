@@ -17,7 +17,7 @@ After starting MobaXterm you should see something like this:
    :width: 50%
    :align: center
 
-Click *Start local terminal* and if you see something like the following then please continue to :ref:`ssh`.
+Click *Start local terminal* and if you see something like the following then please continue to :ref:`ssh-connection`.
 
 .. image:: /images/mobaxterm-terminal.png
    :width: 50%
@@ -36,16 +36,16 @@ Linux and macOS (OS X) both typically come with a command-line SSH client pre-in
 If you are using macOS and want to be able to run graphical applications on the clusters then
 you need to install the latest version of the `XQuartz <https://www.xquartz.org/>`_ *X Windows server*.
 
-Open a terminal (e.g. *Gnome Terminal* on Linux or *Terminal* on macOS) and then go to :ref:`ssh`.
+Open a terminal (e.g. *Gnome Terminal* on Linux or *Terminal* on macOS) and then go to :ref:`ssh-connection`.
 
-.. _ssh:
+.. _ssh-connection:
 
 Establishing a SSH connection
 -----------------------------
 
-Once you have a terminal open, run the following command to log into one of the JADE front-end nodes:
-::
-    ssh -l $USER jade.hartree.stfc.ac.uk
+Once you have a terminal open, run the following command to log into one of the JADE front-end nodes: ::
+
+  ssh -l $USER jade.hartree.stfc.ac.uk
 
 Here you need to replace ``$USER`` with your username (e.g. ``te1st-test``)
 
@@ -68,4 +68,3 @@ Here you need to replace ``$USER`` with your username (e.g. ``te1st-test``)
     You **should not** run applications on the login nodes.
     Running ``srun`` gives you an interactive terminal
     on one of the many worker nodes in the cluster.
-

@@ -10,9 +10,9 @@ The JADE facility consists of 2 head nodes and 22 NVIDIA `DGX-1 <https://www.sca
 
 Users get accounts on the system by following the directions in the **Getting an account** section, on the left.
 
-New users must provide a public SSH key and are given a user ID on JADE.  Using this ID, they will then be able to login to one of the head nodes by using an SSH command like
-::
-   ssh -l account_name jade.hartree.stfc.ac.uk
+New users must provide a public SSH key and are given a user ID on JADE.  Using this ID, they will then be able to login to one of the head nodes by using an SSH command like ::
+
+  ssh -l account_name jade.hartree.stfc.ac.uk
 
 Further details are in the section **Connecting to the cluster using SSH**.
 

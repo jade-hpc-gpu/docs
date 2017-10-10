@@ -7,12 +7,12 @@ Caffe
 
    :URL: http://caffe.berkeleyvision.org/
 
-`Caffe <http://caffe.berkeleyvision.org/>`_ is a Deep Learning framework made with expression, speed, and modularity in mind. It is developed by the Berkeley Vision and Learning Center (`BVLC <http://bvlc.eecs.berkeley.edu/>`_) and by community contributors.
+`Caffe <http://caffe.berkeleyvision.org/>`__ is a Deep Learning framework made with expression, speed, and modularity in mind. It is developed by the Berkeley Vision and Learning Center (`BVLC <http://bvlc.eecs.berkeley.edu/>`_) and by community contributors.
 
 The Caffe Docker Container
 --------------------------
 
-Caffe is available on JADE through the use of a `Docker container <https://docker.com>`_. For more information on JADE's use of containers, see :ref:`containers`.
+Caffe is available on JADE through the use of a `Docker container <https://docker.com>`__. For more information on JADE's use of containers, see :ref:`containers`.
 
 
 Using Caffe Interactively

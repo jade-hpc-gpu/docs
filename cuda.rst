@@ -88,10 +88,3 @@ Useful presentations at NVIDIA's 2017 GTC conference contain:
 * `NCCL 2.0 <http://on-demand.gputechconf.com/gtc/2017/presentation/s7155-jeaugey-nccl.pdf>`_
 * `Multi-GPU Programming <http://on-demand.gputechconf.com/gtc/2017/presentation/s7142-jiri-kraus-multi-gpu-programming-models.pdf>`_
 * `The Making of Saturn-V <http://on-demand.gputechconf.com/gtc/2017/presentation/s7750-louis-capps-making-of-dgx-saturnv.pdf>`_
-
-
-.. toctree::
-    :maxdepth: 2
-    :glob:
-
-    learn/index

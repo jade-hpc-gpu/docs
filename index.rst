@@ -52,9 +52,8 @@ JADE hardware consists of:
    :maxdepth: -1
    :hidden:
 
-
    jade/index
    software/index
-   cuda/index
+   cuda
    more_info
    troubleshooting

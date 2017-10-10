@@ -46,8 +46,7 @@ After creating a group, users can be added to a project.
 
 **To add users:**
 
-  1. Provide your users with the **project name**, **project signup code** (see above section) and signup instruction for regular users at:
-    `http://jade-hpc.readthedocs.io/en/latest/jade/getting-account.html <http://jade-hpc.readthedocs.io/en/latest/jade/getting-account.html>`_
+  1. Provide your users with the **project name**, **project signup code** (see above section) and signup instruction for regular users at: `http://jade-hpc.readthedocs.io/en/latest/jade/getting-account.html <http://jade-hpc.readthedocs.io/en/latest/jade/getting-account.html>`_
   2. Once a user has requested to join a project, there will be a "New Project Management Requests" box. Click the `Process` button and `Accept` (or `Reject`) the new member.
   3. The PI can now add the member to the a **group** previously created.
   4. Click on `Administer` for the Project then choose `Project Group Administration`.
@@ -63,8 +62,7 @@ Project groups and shared file system area
 ------------------------------------------
 
 
-Each Project group maps to a Unix group, and each Project group member's home file system is set up under a directory group structure. The example below starts from a user's home directory and shows that all other members of the Project group are assigned home directories as "peer" directories.
-::
+Each Project group maps to a Unix group, and each Project group member's home file system is set up under a directory group structure. The example below starts from a user's home directory and shows that all other members of the Project group are assigned home directories as "peer" directories. ::
   -bash-4.1$ pwd
   /gpfs/home/training/jpf03/jpf26-jpf03
   -bash-4.1$ cd ..
