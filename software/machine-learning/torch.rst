@@ -49,17 +49,17 @@ This command will show the following, which is now running on a compute node: ::
 
 .. note::
 
-  Inside the container, your home directory on the outside e.g. `/jmain01/home/JAD00X/test/test1-test` is mapped to the `/home_directory` folder inside the container.
+  Inside the container, your home directory on the outside e.g. ``/jmain01/home/JAD00X/test/test1-test`` is mapped to the ``/home_directory`` folder inside the container.
 
   You can test this by using the command:
     ls /home_directory
 
-You are now inside the container where `Torch` is installed.
+You are now inside the container where ``Torch`` is installed.
 
 Torch console
 ^^^^^^^^^^^^^
 
-`Torch` can be used interactively by using the `th` command: ::
+``Torch`` can be used interactively by using the ``th`` command: ::
 
   th
 
@@ -73,7 +73,7 @@ Where you will the torch command prompt: ::
 
   th>
 
-When you're done, type `exit` and then `y` to exit the `Torch` console:  ::
+When you're done, type ``exit`` and then ``y`` to exit the ``Torch`` console:  ::
 
   th> exit
   Do you really want to exit ([y]/n)? y
@@ -83,7 +83,7 @@ When you're done, type `exit` and then `y` to exit the `Torch` console:  ::
 Using LUA script
 ^^^^^^^^^^^^^^^^
 
-It is also possible to pass a LUA script to the `th` command. For example, create a `test.lua` file in the current directory with the contents: ::
+It is also possible to pass a LUA script to the ``th`` command. For example, create a ``test.lua`` file in the current directory with the contents: ::
 
   torch.manualSeed(1234)
   -- choose a dimension
@@ -109,7 +109,7 @@ It is also possible to pass a LUA script to the `th` command. For example, creat
   print(J(torch.rand(N)))
 
 
-Call the `test.lua` script by using the command: ::
+Call the ``test.lua`` script by using the command: ::
 
   th test.lua
 
@@ -128,7 +128,7 @@ Firstly navigate to the folder you wish your script to lauch from, for example w
 
   cd ~
 
-It is recommended that you create a **script file** e.g. `script.sh`: ::
+It is recommended that you create a **script file** e.g. ``script.sh``: ::
 
   #!/bin/bash
 
@@ -136,11 +136,11 @@ It is recommended that you create a **script file** e.g. `script.sh`: ::
   # see above section for contents
   th test.lua
 
-And don't forget to make your `script.sh` executable: ::
+And don't forget to make your ``script.sh`` executable: ::
 
   chmod +x script.sh
 
-Then create a **Slurm batch script** that is used to launch the code, e.g. `batch.sh`: ::
+Then create a **Slurm batch script** that is used to launch the code, e.g. ``batch.sh``: ::
 
   #!/bin/bash
 
@@ -165,7 +165,7 @@ Then create a **Slurm batch script** that is used to launch the code, e.g. `batc
   #Launching the commands within script.sh
   /jmain01/apps/docker/torch-batch -c ./script.sh
 
-You can then submit the job using `sbatch`: ::
+You can then submit the job using ``sbatch``: ::
 
   sbatch batch.sh
 
@@ -173,7 +173,7 @@ On successful submission, a job ID is given: ::
 
   Submitted batch job 7800
 
-The output will appear in the slurm standard output file with the corresponding job ID (in this case `slurm-7800.out`). The content of the output is as follows: ::
+The output will appear in the slurm standard output file with the corresponding job ID (in this case ``slurm-7800.out``). The content of the output is as follows: ::
 
     ______             __   |  Torch7
    /_  __/__  ________/ /   |  Scientific computing for Lua.

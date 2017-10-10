@@ -47,12 +47,12 @@ This command will show the following, which is now running on a compute node: ::
 
 .. note::
 
-  Inside the container, your home directory on the outside e.g. `/jmain01/home/JAD00X/test/test1-test` is mapped to the `/home_directory` folder inside the container.
+  Inside the container, your home directory on the outside e.g. ``/jmain01/home/JAD00X/test/test1-test`` is mapped to the ``/home_directory`` folder inside the container.
 
   You can test this by using the command:
     ls /home_directory
 
-You can test that `Theano` is running on the GPU with the following python code `theanotest.py` ::
+You can test that ``Theano`` is running on the GPU with the following python code ``theanotest.py`` ::
 
   from theano import function, config, shared, sandbox
   import theano.tensor as T
@@ -77,11 +77,11 @@ You can test that `Theano` is running on the GPU with the following python code 
   else:
       print('Used the gpu')
 
-Run the `theanotest.py` script with the following command: ::
+Run the ``theanotest.py`` script with the following command: ::
 
   THEANO_FLAGS="device=gpu" python theanotest.py
 
-The `THEANO_FLAGS` `device` variable can be set to either `cpu` or `gpu`.
+The ``THEANO_FLAGS`` ``device`` variable can be set to either ``cpu`` or ``gpu``.
 
 Which gives the following results: ::
 
@@ -109,18 +109,18 @@ Firstly navigate to the folder you wish your script to lauch from, for example w
 
   cd ~
 
-It is recommended that you create a **script file** e.g. `script.sh`: ::
+It is recommended that you create a **script file** e.g. ``script.sh``: ::
 
   #!/bin/bash
 
   # Run the theanotest.py script, see previous section for contents
   python theanotest.py
 
-And don't forget to make your `script.sh` executable: ::
+And don't forget to make your ``script.sh`` executable: ::
 
   chmod +x script.sh
 
-Then create a **Slurm batch script** that is used to launch the code, e.g. `batch.sh`: ::
+Then create a **Slurm batch script** that is used to launch the code, e.g. ``batch.sh``: ::
 
   #!/bin/bash
 
@@ -146,7 +146,7 @@ Then create a **Slurm batch script** that is used to launch the code, e.g. `batc
   #Launching the commands within script.sh
   /jmain01/apps/docker/theano-batch -c ./script.sh
 
-You can then submit the job using `sbatch`: ::
+You can then submit the job using ``sbatch``: ::
 
   sbatch batch.sh
 
@@ -154,7 +154,7 @@ On successful submission, a job ID is given: ::
 
   Submitted batch job 7800
 
-The output will appear in the slurm standard output file with the corresponding job ID (in this case `slurm-7800.out`). The content of the output is as follows: ::
+The output will appear in the slurm standard output file with the corresponding job ID (in this case ``slurm-7800.out``). The content of the output is as follows: ::
 
   ============
   == Theano ==
