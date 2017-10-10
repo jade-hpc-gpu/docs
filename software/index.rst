@@ -33,5 +33,5 @@ The following are the available applications, libraries and development tools on
     :maxdepth: 2
     :glob:
 
-    molecular-dynamics/index
     machine-learning/index
+    molecular-dynamics/index
