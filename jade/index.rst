@@ -49,6 +49,6 @@ There is also access to local disc space on each compute node, but this access o
    getting-account
    pi-projectmanager
    connecting
-   scheduler/index
    modules
+   scheduler/index
    containers

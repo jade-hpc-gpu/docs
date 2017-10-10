@@ -1,7 +1,7 @@
 .. _development:
 
-Development Tools on JADE
-=========================
+Libraries on JADE
+=================
 
 .. toctree::
     :maxdepth: 1
