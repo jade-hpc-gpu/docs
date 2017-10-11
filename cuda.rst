@@ -70,14 +70,6 @@ Nsight is NVIDIA's integrated development environment:
 
 NVIDIA also provide helpful guides on the Pascal architecture:
 
-* `Floating point accuracy on NVIDIA GPUs <http://docs.nvidia.com/cuda/pdf/Floating_Point_on_NVIDIA_GPU_White_Paper.pdf>`_
-* `CUDA SDK examples <http://developer.nvidia.com/object/cuda_sdk_samples.html">`_
-* `OpenACC <http://www.openacc.org>`_
-* `OpenMP 4.5 <http://on-demand.gputechconf.com/gtc/2016/presentation/s6510-jeff-larkin-targeting-gpus-openmp.pdf>`_
-
-
-NVIDIA also provide helpful guides on the Pascal architecture:
-
 * `Pascal Tuning Guide <http://docs.nvidia.com/cuda/pascal-tuning-guide/>`_
 * `Pascal P100 White Paper <https://images.nvidia.com/content/pdf/tesla/whitepaper/pascal-architecture-whitepaper.pdf>`_
 
