@@ -55,6 +55,7 @@ After creating a group, users can be added to a project.
   7. The new project member will have an `Active` status in the group once the process is completed.
 
 .. note::
+
   The PI does NOT have to 'Request Join Project' as he/she is automatically a Project member. They must however, add themselves to a Group.
 
 
@@ -63,6 +64,7 @@ Project groups and shared file system area
 
 
 Each Project group maps to a Unix group, and each Project group member's home file system is set up under a directory group structure. The example below starts from a user's home directory and shows that all other members of the Project group are assigned home directories as "peer" directories. ::
+
   -bash-4.1$ pwd
   /gpfs/home/training/jpf03/jpf26-jpf03
   -bash-4.1$ cd ..
