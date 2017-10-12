@@ -55,22 +55,24 @@ After creating a group, users can be added to a project.
   7. The new project member will have an `Active` status in the group once the process is completed.
 
 .. note::
+
   The PI does NOT have to 'Request Join Project' as he/she is automatically a Project member. They must however, add themselves to a Group.
 
 
 Project groups and shared file system area
 ------------------------------------------
 
+
 Each Project group maps to a Unix group, and each Project group member's home file system is set up under a directory group structure. The example below starts from a user's home directory and shows that all other members of the Project group are assigned home directories as "peer" directories. ::
 
-  | -bash-4.1$ pwd
-  | /gpfs/home/training/jpf03/jpf26-jpf03
-  | -bash-4.1$ cd ..
-  | -bash-4.1$ ls
-  | afg27-jpf03  bbl28-jpf03  cxe72-jpf03  dxd46-jpf03  hvs09-jpf03  jjb63-jpf03  jxm09-jpf03  mkk76-jpf03  phw57-jpf03  rrr25-jpf03  rxw47-jpf03  sxl18-jpf03
-  | ajd95-jpf03  bwm51-jpf03  cxl10-jpf03  dxp21-jpf03  hxo76-jpf03  jkj47-jpf03  kxm85-jpf03  mxm86-jpf03  pxj86-jpf03  rrs70-jpf03  sca58-jpf03  tcn16-jpf03
-  | axa59-jpf03  bxp59-jpf03  djc87-jpf03  fxb73-jpf03  ivk29-jpf03  jpf26-jpf03  lim17-jpf03  nxt14-jpf03  rja87-jpf03  rwt21-jpf03  shared       txc61-jpf03
-  | axw52-jpf03  bxv09-jpf03  dwn60-jpf03  gxx38-jpf03  jds89-jpf03  jrh19-jpf03  ltc84-jpf03  pag51-jpf03  rjb98-jpf03  rxl87-jpf03  sls56-jpf03  vvt17-jpf03
+  -bash-4.1$ pwd
+  /gpfs/home/training/jpf03/jpf26-jpf03
+  -bash-4.1$ cd ..
+  -bash-4.1$ ls
+  afg27-jpf03  bbl28-jpf03  cxe72-jpf03  dxd46-jpf03  hvs09-jpf03  jjb63-jpf03  jxm09-jpf03  mkk76-jpf03  phw57-jpf03  rrr25-jpf03  rxw47-jpf03  sxl18-jpf03
+  ajd95-jpf03  bwm51-jpf03  cxl10-jpf03  dxp21-jpf03  hxo76-jpf03  jkj47-jpf03  kxm85-jpf03  mxm86-jpf03  pxj86-jpf03  rrs70-jpf03  sca58-jpf03  tcn16-jpf03
+  axa59-jpf03  bxp59-jpf03  djc87-jpf03  fxb73-jpf03  ivk29-jpf03  jpf26-jpf03  lim17-jpf03  nxt14-jpf03  rja87-jpf03  rwt21-jpf03  shared       txc61-jpf03
+  axw52-jpf03  bxv09-jpf03  dwn60-jpf03  gxx38-jpf03  jds89-jpf03  jrh19-jpf03  ltc84-jpf03  pag51-jpf03  rjb98-jpf03  rxl87-jpf03  sls56-jpf03  vvt17-jpf03
 
 Important to some, please note that for each Project group there is a "shared" directory which can be reached at ::
 
