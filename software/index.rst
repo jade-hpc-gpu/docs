@@ -13,6 +13,7 @@ The software initially installed on the machine is listed in the following table
     PGI compiler suite,	17.4,
     OpenMPI,	1.10.2,	Supplied with PGI
     OpenMPI,	1.10.5a1,	Supplied with PGI
+    OpenMPI,   2.1.2, Inlcudes multi-thread support
     Gromacs,	2016.3,	Supplied by Nvidia
     NAMD,	2.12,
 
