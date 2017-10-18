@@ -12,7 +12,7 @@ CUDA is a parallel computing platform and API model created and developed by Nvi
 
 Versions
 --------
-Multiple CUDA versions are available through the module system
+Multiple CUDA versions are available through the module system. Version 8.0 is the current usable version. An upgrade to CUDA version 9.0 will be coming soon.
 
 
 Environment
@@ -23,7 +23,7 @@ The CUDA environment is managed through the modules, which set all the environme
 
 The environment set by a particular module can be inspected, *e.g.* ::
 
-  module show cuda/9.0
+  module show cuda/8.0
 
 
 Learn more
