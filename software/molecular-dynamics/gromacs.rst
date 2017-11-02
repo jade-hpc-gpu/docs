@@ -14,23 +14,31 @@ Gromacs is a versatile package for molecular dynamics simulations, which solves 
 Job scripts
 -----------
 
-The following is an example Slurm script to run the code using one of the regression tests from the installation:
+Gromacs jobs should run on either half a node (4 GPUs) of the entire node (8 GPUs).  The following Slurm script example is written for one of the regression tests from the installation, running Gromacs on half a node:
 
 ::
 
-    #!/bin/bash
+   #!/bin/bash
 
-    #SBATCH --nodes=1
-    #SBATCH --ntasks=4
-    #SBATCH -J testGromacs
-    #SBATCH --time=01:00:00
-    #SBATCH --gres=gpu:4
+   #SBATCH --nodes=1
+   #SBATCH --ntasks-per-node=4
+   #SBATCH --cpus-per-task=5
+   #SBATCH --gres=gpu:4
+   #SBATCH --gres-flags=enforce-binding
+   #SBATCH --time=10:00:00
+   #SBATCH -J testGromacs
 
-    module load gromacs/2016.3
+   module purge
+   module load gromacs/2016.3
 
-    mpirun -np $SLURM_NTASKS gmx_mpi mdrun -s topol.tpr -noconfout -resethway -nsteps 10000 -ntomp 10 -pin on &> run-gromacs.out
+   mpirun -np ${SLURM_NTASKS_PER_NODE} --bind-to socket -map-by socket \
+          gmx_mpi mdrun -s topol.tpr -noconfout -resethway -nsteps 10000 \
+	  -ntomp ${SLURM_CPUS_PER_TASK} -pin on &> run-gromacs.out
 
-The example utilises half the resources on a JADE node, with a requests for a single node with 20 tasks and 4 GPUs.  Gromacs is started with a number of processes to match the number of GPUs.  Also, each process is multithreading, option which is set via `-ntomp`.  Process pinning is requested via `-pin on`.
+
+The example utilises half the resources on a JADE node, with a requests for a single node with 20 tasks and 4 GPUs.  Gromacs is started with a number of processes to match the number of GPUs.  Also, each process is multithreading, option which is set via `-ntomp`.  Process pinning is requested via `-pin on`.  The number of MPI processes is controlled via `ntasks-per-node`, which initialises the environment variable `SLURM_NTASKS_PER_NODE`, while the number of threads per process is determined by `cpus-per-task`, which initialises `SLURM_CPUS_PER_TASK`.  Note that the number of processes must match that of the GPUs used.
+
+To run the same job on an entire node, you need to change the values for `ntasks-per-node` and `gres=gpu` from 4 to 8.
 
 To read more about Gromacs processing on GPUs, please visit https://www.nvidia.com/en-us/data-center/gpu-accelerated-applications/gromacs/ .
 
