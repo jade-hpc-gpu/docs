@@ -31,12 +31,14 @@ Gromacs jobs should run on either half a node (4 GPUs) of the entire node (8 GPU
    module purge
    module load gromacs/2016.3
 
-   mpirun -np ${SLURM_NTASKS_PER_NODE} --bind-to socket -map-by socket \
+   mpirun -np ${SLURM_NTASKS_PER_NODE} --bind-to socket \
           gmx_mpi mdrun -s topol.tpr -noconfout -resethway -nsteps 10000 \
 	  -ntomp ${SLURM_CPUS_PER_TASK} -pin on &> run-gromacs.out
 
 
 The example utilises half the resources on a JADE node, with a requests for a single node with 20 tasks and 4 GPUs.  Gromacs is started with a number of processes to match the number of GPUs.  Also, each process is multithreading, option which is set via `-ntomp`.  Process pinning is requested via `-pin on`.  The number of MPI processes is controlled via `ntasks-per-node`, which initialises the environment variable `SLURM_NTASKS_PER_NODE`, while the number of threads per process is determined by `cpus-per-task`, which initialises `SLURM_CPUS_PER_TASK`.  Note that the number of processes must match that of the GPUs used.
+
+The request `--bind-to socket` is specific to OpenMPI, which was used to build Gromacs on JADE.  This extra option to the OpenMPI `mpirun` is essential in obtaining the optimal run configuration and therefore the computational performance.
 
 To run the same job on an entire node, you need to change the values for `ntasks-per-node` and `gres=gpu` from 4 to 8.
 
