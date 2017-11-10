@@ -151,6 +151,31 @@ Once the job submitted, it will sit in a pending state until the resources have 
 
 Once the job starts to run you will see files with names such as ``slurm-1234.out`` either in the directory you submitted the job from (default behaviour) or in the directory where the script was instructed explicitly to change to.
 
+Job partitions on JADE
+----------------------
+
+Partitions are Slurm entities defined by the system administrators that allow the separation and control of jobs according to their characteristics.  Each partition has a a number of compute nodes associated with it, as well as properties that control job placement.  A job can be submitted to be executed by a particular partition, and if no partition is specified, the default one is selected.
+
+There are three partitions on JADE, which are
+
++----------------+--------------------------------------+---------------------+----------+
+| Partition name | Description                          | Walltime limit      | Size     |
++================+======================================+=====================+==========+
+| ``big``        | Partition dedicated to jobs that     | 24 hours            | 11 nodes |
+|                | occupy an entire node, *i.e.* 8 GPUs |                     |          |
++----------------+--------------------------------------+---------------------+----------+
+| ``small``      | Partition dedicated to jobs that     | 6 days              | 10 nodes |
+|                | utilise a single GPUs each.          |                     |          |
++----------------+--------------------------------------+---------------------+----------+
+| ``devel``      | Partition dedicated to testing.      | 1 hour              | 1 node   |
++----------------+--------------------------------------+---------------------+----------+
+
+The default partition is ``big``.  Information on these partitions can be obtained with the commands ``sinfo -a`` or ``scontrol show partition=small``.
+
+Submitting to a particular partition can be done by specifying the partition as an argument to ``sbatch``, *e.g.* ``sbatch -p devel sub.sh``, or by directly supplying a request for that partition in the submission script, *e.g.* ``#SBATCH --partition=devel``.
+
+
+
 
 Monitoring jobs with the command squeue
 ---------------------------------------
