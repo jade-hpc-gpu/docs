@@ -37,18 +37,13 @@ Additionally, the following topics specific to JADE are covered (*under construc
 
 Commands
 --------
-The table below gives a short description of the most used Slurm commands.
+The table below gives a short description of the Slurm commands that are likely to be useful to most users.
 
 +-------------+-------------------------------------------------+
 | Command     | Description                                     |
 +=============+=================================================+
 | ``sacct``   | report job accounting information about active  |
 |             | or completed jobs                               |
-+-------------+-------------------------------------------------+
-| ``salloc``  | allocate resources for a job in real time       |
-|             | (typically used to allocate resources and       |
-|             | spawn a shell, in which the srun command is     |
-|             | used to launch parallel tasks)                  |
 +-------------+-------------------------------------------------+
 | ``sbatch``  | submit a job script for later execution         |
 |             | (the script typically contains one or more      |
@@ -66,14 +61,28 @@ The table below gives a short description of the most used Slurm commands.
 |             | priority order followed by the pending jobs in  |
 |             | priority order                                  |
 +-------------+-------------------------------------------------+
-| ``srun``    | used to submit a job for execution in real time |
-+-------------+-------------------------------------------------+
 
 All Slurm commands have extensive help through their man pages *e.g.*::
 
   man sbatch
 
 shows you the help pages for the ``sbatch`` command.
+
+In addition to the above commands, the table below gives two more commands that can be used in special cases, *e.g.* to obtain an interactive session, such as used in the Machine Learning examples.  The commands are
+
++-------------+-------------------------------------------------+
+| Command     | Description                                     |
++=============+=================================================+
+| ``salloc``  | allocate resources for a job in real time       |
+|             | (typically used to allocate resources and       |
+|             | spawn a shell, in which the srun command is     |
+|             | used to launch parallel tasks)                  |
++-------------+-------------------------------------------------+
+| ``srun``    | used to submit a job for execution in real time |
++-------------+-------------------------------------------------+
+
+*N.B.* ``srun`` can be used to launch application into execution from within submission scripts.  The success of this in the case of MPI distributed applications depends on the MPI software stack having been build with support for PMI (Process Management Interface).
+
 
 
 Preparing a submission script
@@ -191,3 +200,56 @@ In most cases, ``SLURM_SUBMIT_DIR`` does not have to be used, as the job lands b
   myApp &> $SLURM_JOB_ID.out
 
 runs the application myApp and redirects the standard output (and error) to a file whose name is given by the job ID.  *Note*: the job ID is a number assigned by Slurm and differs from the character string name given to the job in the submission script by the user.
+
+
+Job arrays
+----------
+Job arrays is a useful mechanism for submitting and managing collections of similar jobs quickly and easily; multiple job are submitted to the queue using a single ``sbatch`` command and a single submission script.
+
+Here are a few examples:::
+
+  # submit a job array with index values between 0 and 7
+  $ sbatch --array=0-7 sub.sh
+
+  # submit a job array with index values of 1, 3, 5 and 7
+  $ sbatch --array=1,3,5,7 sub.sh
+
+  # submit a job array with index values between 1 and 7 with a step size of 2 (i.e. 1, 3, 5 and 7)
+  $ sbatch --array=1-7:2 sub.sh
+
+The index values are used by Slurm to initialise two environment variables when the job launches into execution.  These variables are
+
+* ``SLURM_ARRAY_JOB_ID``, set to the first job ID of the array and
+* ``SLURM_ARRAY_TASK_ID``, set to the job array index value.
+
+To give an example, suppose you submit an array of three jobs using the submission command ``sbatch --array=1-3 sub.sh``, which returns::
+
+  Submitted batch job 10
+
+Then, the environment variables in the three jobs will be
+
++------------------+------------------------+
+| Job array index  | Variables              |
++==================+========================+
+| 1                | SLURM_ARRAY_JOB_ID=10; |
+|                  | SLURM_ARRAY_TASK_ID=1  |
++------------------+------------------------+
+| 2                | SLURM_ARRAY_JOB_ID=10; |
+|                  | SLURM_ARRAY_TASK_ID=2  |
++------------------+------------------------+
+| 3                | SLURM_ARRAY_JOB_ID=10; |
+|                  | SLURM_ARRAY_TASK_ID=3  |
++------------------+------------------------+
+
+The above environment variables can be used within the submission script to define what each individual job within the array does.  To take a simple example, suppose each job in the array uses a single GPU and takes the input from a file that is identified by the same index as the job.  The submission script could look like this::
+
+  #!/bin/bash
+
+  #SBATCH --nodes=1
+  #SBATCH --job-name=test
+  #SBATCH --time=00:30:00
+  #SBATCH --gres=gpu:1
+
+  myCode --input "file_${SLURM_ARRAY_TASK_ID}.inp"
+
+To reiterate, the advantage of using job arrays is a single job script as the one above can be used to launch a large number of jobs, each working on a different tasks, in a controlled way.
