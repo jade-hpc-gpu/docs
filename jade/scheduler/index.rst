@@ -156,25 +156,40 @@ Job partitions on JADE
 
 Partitions are Slurm entities defined by the system administrators that allow the separation and control of jobs according to their characteristics.  Each partition has a a number of compute nodes associated with it, as well as properties that control job placement.  A job can be submitted to be executed by a particular partition, and if no partition is specified, the default one is selected.
 
-There are three partitions on JADE, which are
+There are three partitions on JADE, which are:
 
-+----------------+--------------------------------------+---------------------+----------+
-| Partition name | Description                          | Walltime limit      | Size     |
-+================+======================================+=====================+==========+
-| ``big``        | Partition dedicated to jobs that     | 24 hours            | 11 nodes |
-|                | occupy an entire node, *i.e.* 8 GPUs |                     |          |
-+----------------+--------------------------------------+---------------------+----------+
-| ``small``      | Partition dedicated to jobs that     | 6 days              | 10 nodes |
-|                | utilise a single GPUs each.          |                     |          |
-+----------------+--------------------------------------+---------------------+----------+
-| ``devel``      | Partition dedicated to testing.      | 1 hour              | 1 node   |
-+----------------+--------------------------------------+---------------------+----------+
++----------------+--------------------------------------+
+| Partition name | Description                          |
++================+======================================+
+| ``big``        | Partition dedicated to jobs that     |
+|                | occupy an entire node, *i.e.* 8 GPUs |
++----------------+--------------------------------------+
+| ``small``      | Partition dedicated to jobs that     |
+|                | utilise a single GPUs each.          |
++----------------+--------------------------------------+
+| ``devel``      | Partition dedicated to testing.      |
++----------------+--------------------------------------+
+
+The partitions have the following limits for submitted jobs:
+
++----------------+---------------------+----------+-------------------+
+| Partition name | Job Walltime limit  | Job Size | Running Job limit |
++================+=====================+==========+===================+
+| ``big``        | 24 hours            | 11 nodes | 5 Jobs            |
+|                |                     |          |                   |
++----------------+---------------------+----------+-------------------+
+| ``small``      | 6 days              | 10 nodes | 16 Jobs           |
+|                |                     |          |                   |
++----------------+---------------------+----------+-------------------+
+| ``devel``      | 1 hour              | 1 node   | 1 Job             |
++----------------+---------------------+----------+-------------------+
+
 
 The default partition is ``big``.  Information on these partitions can be obtained with the commands ``sinfo -a`` or ``scontrol show partition=small``.
 
 Submitting to a particular partition can be done by specifying the partition as an argument to ``sbatch``, *e.g.* ``sbatch -p devel sub.sh``, or by directly supplying a request for that partition in the submission script, *e.g.* ``#SBATCH --partition=devel``.
 
-
+Upon reaching the running job limit, subsequently submitted jobs will be shown as state Pending (PD) with the Reason set as QOSMaxJobsPerUserLimit. 
 
 
 Monitoring jobs with the command squeue
