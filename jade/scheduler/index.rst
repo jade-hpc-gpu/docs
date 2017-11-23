@@ -172,24 +172,26 @@ There are three partitions on JADE, which are:
 
 The partitions have the following limits for submitted jobs:
 
-+----------------+---------------------+----------+-------------------+
-| Partition name | Job Walltime limit  | Job Size | Running Job limit |
-+================+=====================+==========+===================+
-| ``big``        | 24 hours            | 11 nodes | 5 Jobs            |
-|                |                     |          |                   |
-+----------------+---------------------+----------+-------------------+
-| ``small``      | 6 days              | 10 nodes | 16 Jobs           |
-|                |                     |          |                   |
-+----------------+---------------------+----------+-------------------+
-| ``devel``      | 1 hour              | 1 node   | 1 Job             |
-+----------------+---------------------+----------+-------------------+
++----------------+---------------------+-------------------+-------------------+
+| Partition name | Partition Size      |Job Walltime limit | Running Job limit |
++================+=====================+===================+===================+
+| ``big``        | 11 nodes            | 24 hours          | 5 Jobs            |
+|                |                     |                   |                   |
++----------------+---------------------+-------------------+-------------------+
+| ``small``      | 10 nodes            | 6 days            | 16 Jobs           |
+|                |                     |                   |                   |
++----------------+---------------------+-------------------+-------------------+
+| ``devel``      | 1 node              | 1 hour            | 1 Job             |
++----------------+---------------------+-------------------+-------------------+
 
 
 The default partition is ``big``.  Information on these partitions can be obtained with the commands ``sinfo -a`` or ``scontrol show partition=small``.
 
 Submitting to a particular partition can be done by specifying the partition as an argument to ``sbatch``, *e.g.* ``sbatch -p devel sub.sh``, or by directly supplying a request for that partition in the submission script, *e.g.* ``#SBATCH --partition=devel``.
 
-Upon reaching the running job limit, subsequently submitted jobs will be shown as state Pending (PD) with the Reason set as QOSMaxJobsPerUserLimit. 
+The ``devel`` partition should be used to check your submission script works correctly and that your application starts to execute without errors. 
+
+Upon reaching the per user running job limit for a partition, any further jobs submitted to that same partition by the same user will be shown as state Pending (PD) with the Reason set as QOSMaxJobsPerUserLimit. 
 
 
 Monitoring jobs with the command squeue
