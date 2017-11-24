@@ -6,7 +6,7 @@ The Slurm Scheduler
 Introduction
 ------------
 
-Running software on the JADE system is accomplished via batch jobs, *i.e.* in an unattended, non-interactive manner.  Typically a user logs in to the JADE login nodes, prepares a job script and submits it to the job queue.
+Running software on the JADE system is accomplished with batch jobs, *i.e.* in an unattended, non-interactive manner.  Typically a user logs in to the JADE login nodes, prepares a job script and submits it to the job queue.
 
 Jobs on JADE are managed by the `Slurm batch system <https://slurm.schedmd.com>`_ , which is in charge of:
 
