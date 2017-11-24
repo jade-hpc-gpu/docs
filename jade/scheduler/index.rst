@@ -189,9 +189,9 @@ The default partition is ``big``.  Information on these partitions can be obtain
 
 Submitting to a particular partition can be done by specifying the partition as an argument to ``sbatch``, *e.g.* ``sbatch -p devel sub.sh``, or by directly supplying a request for that partition in the submission script, *e.g.* ``#SBATCH --partition=devel``.
 
-The ``devel`` partition should be used to check your submission script works correctly and that your application starts to execute without errors. 
+The ``devel`` partition should be used to check your submission script works correctly and that your application starts to execute without errors.
 
-Upon reaching the per user running job limit for a partition, any further jobs submitted to that same partition by the same user will be shown as state Pending (PD) with the Reason set as QOSMaxJobsPerUserLimit. 
+Upon reaching the per user running job limit for a partition, any further jobs submitted to that same partition by the same user will be shown as state Pending (PD) with the Reason set as QOSMaxJobsPerUserLimit.
 
 
 Monitoring jobs with the command squeue
