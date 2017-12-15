@@ -96,3 +96,49 @@ Each of the containerised applications has its own batch launching script:
     /jmain01/apps/docker/torch-batch
     /jmain01/apps/docker/caffe-batch
     /jmain01/apps/docker/theano-batch
+
+
+Singularity Containers
+----------
+
+Singularity 2.4 is installed in ``/jmain01/apps/singularity/2.4``. When you build your container, within your own environment, your container you must have the following directories:
+
+::
+
+    /usr/local/cuda
+    /tmp
+    /local_scratch
+    /home_directory
+
+
+These will be mounted by the local node when your container executes. The ``/tmp`` & ``/local_scratch`` directory are the local RAID disks on the DGX node and should be used for building code or temporary files. Your home directory will also be mounted into the container as ``/home_directory``.
+
+There are 2 scripts in the ``/jmain01/apps/singularity/2.4/bin`` directory that you can use to launch your container using Slurm:
+
+::
+
+    singbatch
+    singinteractive
+
+You call them with either
+
+::
+
+    singinteractive CONTAINER_FILE
+    # OR
+    singbatch CONTAINER_FILE SCRIPT_TO_EXECUTE
+
+
+You should use these scripts with Slurm. So for example with an INTERACTIVE session:
+
+::
+
+    module load singularity
+    srun -I --pty -t 0-10:00 --gres gpu:1 -p small singinteractive /jmain01/apps/singularity/singularity-images/caffe-gpu.img
+
+If you want to run in batch mode, you should call ``singbatch`` (using sbatch) and provide a script to execute within the container.
+
+You MUST respect the ``CUDA_VISIBLE_DEVICES`` variable within the container, as you can see ALL the GPUs in the container. Some of these GPUs may be in use by other users and Slurm has allocated you a specific ones/group & will set this variable for you. If you are familiar with Docker, it only shows you the GPUs have been allocated.
+
+Slurm will clear out ``/tmp`` and ``/local_scratch`` once you exit the container, so make sure you copy anything back to your home directory if you need it! There is an example “caffe” image provided in ``/jmain01/apps/singularity/singularity-images`` if you wish to contribute an image for others to use, please submit an issue to the Github Issue t
+
