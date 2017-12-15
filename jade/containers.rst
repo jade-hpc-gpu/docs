@@ -9,8 +9,12 @@ Any files you copy into ``/home_directory`` will have the same userid as normal 
 
 This is 6.6TB in size but any data will be lost once the interactive session is ended. There are two ways of interacting with the containerised applications.
 
-Listing available containers
+Docker Containers
 ----------------------------
+
+
+Listing available containers
+~~~~~~~~~~~~~~~~~~~~~~
 
 To list the containers and version available on the system do:
 
@@ -27,7 +31,7 @@ To list the containers and version available on the system do:
 
 
 Interactive Mode
-----------------
+~~~~~~~~~~~~~~~~~~~~~~
 
 All the applications in containers can be launched interactively in the same way using 1 compute node at a time. The number of GPUs to be used per node is requested using the ``gres`` option. To request an interactive session on a compute node the following command is issued from the login node:
 
@@ -63,7 +67,7 @@ Note. The warnings in the last two lines can be ignored. To exit the container, 
     srun --gres=gpu:4 --pty /jmain01/apps/docker/torch 17.04
 
 Batch Mode
-----------
+~~~~~~~~~~~~~~~~~~~~~~
 
 There are wrappers for launching the containers in batch mode. For example, to launch the Torch application change directory to where the launching script is, in this case called ``submit-char.sh``:
 
