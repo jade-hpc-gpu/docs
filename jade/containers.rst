@@ -144,5 +144,4 @@ If you want to run in batch mode, you should call ``singbatch`` (using sbatch) a
 
 You MUST respect the ``CUDA_VISIBLE_DEVICES`` variable within the container, as you can see ALL the GPUs in the container. Some of these GPUs may be in use by other users and Slurm has allocated you a specific ones/group & will set this variable for you. If you are familiar with Docker, it only shows you the GPUs have been allocated.
 
-Slurm will clear out ``/tmp`` and ``/local_scratch`` once you exit the container, so make sure you copy anything back to your home directory if you need it! There is an example “caffe” image provided in ``/jmain01/apps/singularity/singularity-images`` if you wish to contribute an image for others to use, please submit an issue to the Github Issue t
-
+Slurm will clear out ``/tmp`` and ``/local_scratch`` once you exit the container, so make sure you copy anything back to your home directory if you need it! There is an example “caffe” image provided in ``/jmain01/apps/singularity/singularity-images`` if you wish to contribute an image for others to use, please submit an issue to the `Github Issue tracker <https://github.com/jade-hpc-gpu/jade-hpc-gpu.github.io/issues>`_
