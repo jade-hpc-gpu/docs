@@ -20,14 +20,18 @@ To list the containers and version available on the system do:
 
 ::
 
-    $ containers
+    root@dgj223:~# containers
     REPOSITORY                  TAG                 IMAGE ID            CREATED             SIZE
-    nvcr.io/nvidia/tensorflow   17.07               94b1afe1821c        3 months ago        4.404 GB
-    nvidia/cuda                 latest              15e5dedd88c5        5 months ago        1.67 GB
-    nvcr.io/nvidia/caffe        17.04               87c288427f2d        5 months ago        2.794 GB
-    nvcr.io/nvidia/theano       17.04               24943feafc9b        6 months ago        2.386 GB
-    nvcr.io/nvidia/torch        17.04               a337ffb42c8e        6 months ago        2.9 GB
-    Last updated:Tue Oct 10 01:00:02 BST 2017
+    nvcr.io/nvidia/caffe        17.11               74f90888fb24        4 weeks ago         3.247 GB
+    nvcr.io/nvidia/theano       17.11               39aed30f94ed        6 weeks ago         3.367 GB
+    nvcr.io/nvidia/torch        17.11               1fb9e886f48c        6 weeks ago         3.267 GB
+    nvcr.io/nvidia/caffe2       17.10               2ff2ccd2c8c1        10 weeks ago        2.731 GB
+    nvcr.io/nvidia/tensorflow   17.07               94b1afe1821c        5 months ago        4.404 GB
+    nvidia/cuda                 latest              15e5dedd88c5        7 months ago        1.67 GB
+    nvcr.io/nvidia/caffe        17.04               87c288427f2d        7 months ago        2.794 GB
+    nvcr.io/nvidia/theano       17.04               24943feafc9b        8 months ago        2.386 GB
+    nvcr.io/nvidia/torch        17.04               a337ffb42c8e        8 months ago        2.9 GB
+    Last updated:Tue Dec 19 01:00:01 GMT 2017
 
 
 Interactive Mode
