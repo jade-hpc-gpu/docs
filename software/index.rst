@@ -36,3 +36,4 @@ The following are the available applications, libraries and development tools on
 
     machine-learning/index
     molecular-dynamics/index
+    python
