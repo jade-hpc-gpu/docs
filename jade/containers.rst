@@ -115,7 +115,7 @@ Singularity 2.4 is installed in ``/jmain01/apps/singularity/2.4``. When you buil
 
 These will be mounted by the local node when your container executes. The ``/tmp`` & ``/local_scratch`` directory are the local RAID disks on the DGX node and should be used for building code or temporary files. 
 
-Unlike Docker containers, the home directory the same as when you're outside the container (e.g. ``/jmain01/home/your_project/your_group/your_username``). You can use ``cd ~`` to get to your home directory and you can use ``echo $HOME`` to print out your home location.
+Unlike Docker containers, the home directory the same as when you're outside the container (e.g. ``/jmain01/home/your_project/your_group/your_username``). You can use ``cd ~`` to get to your home directory and ``echo $HOME`` to print out your home location.
 
 There are 2 scripts in the ``/jmain01/apps/singularity/2.4/bin`` directory that you can use to launch your container using Slurm:
 
