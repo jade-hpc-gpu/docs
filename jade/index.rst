@@ -38,6 +38,10 @@ purposes; submitting batch jobs is the standard way of working.
 
 The global file system is accessible from both the head nodes and the compute nodes.  Any files written during the job execution on the compute nodes will be found on the file system after the job has completed.
 
+For information on your disk space usage and remaining quota, use the following command ::
+
+  getquota
+
 There is also access to local disc space on each compute node, but this access only possible during a Slurm job and once the job is completed the local disc data is removed automatically.  In machine learning applications, for example, this local disc space (provided by fast SSD) may be useful as a staging point for very large training sets.
 
 
