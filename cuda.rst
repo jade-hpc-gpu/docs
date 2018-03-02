@@ -12,7 +12,7 @@ CUDA is a parallel computing platform and API model created and developed by Nvi
 
 Versions
 --------
-Multiple CUDA versions are available through the module system. Version 8.0 is the current usable version. An upgrade to CUDA version 9.0 will be coming soon.
+Multiple CUDA versions are available through the module system. Version 9.0 is the current usable version following upgrade to DGX-1 Server 3.1.4. Upgrades to CUDA will be released as they become Generally Available.
 
 
 Environment
