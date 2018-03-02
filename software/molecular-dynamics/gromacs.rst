@@ -14,33 +14,38 @@ Gromacs is a versatile package for molecular dynamics simulations, which solves 
 Job scripts
 -----------
 
-Gromacs jobs should run on either half a node (4 GPUs) of the entire node (8 GPUs).  The following Slurm script example is written for one of the regression tests from the installation, running Gromacs on half a node:
+Gromacs jobs can run using 1, 4 (half a node), or 8 (full node) GPUs (please see note below regarding job performance). The following Slurm script example is written for one of the regression tests from the installation:
+
 
 ::
 
    #!/bin/bash
 
    #SBATCH --nodes=1
-   #SBATCH --ntasks-per-node=4
+   #SBATCH --ntasks-per-node=1
    #SBATCH --cpus-per-task=5
-   #SBATCH --gres=gpu:4
+   #SBATCH --gres=gpu:1
    #SBATCH --gres-flags=enforce-binding
    #SBATCH --time=10:00:00
    #SBATCH -J testGromacs
+   #SBATCH -p small
 
    module purge
-   module load gromacs/2016.3
+   module load gromacs/2018.0
 
    mpirun -np ${SLURM_NTASKS_PER_NODE} --bind-to socket \
           gmx_mpi mdrun -s topol.tpr \
 	  -ntomp ${SLURM_CPUS_PER_TASK} &> run-gromacs.out
 
 
-The example utilises half the resources on a JADE node, with a requests for a single node with 20 tasks and 4 GPUs.  Gromacs is started with a number of processes to match the number of GPUs.  Also, each process is multithreading, option which is set via `-ntomp`.  Process pinning is requested via `-pin on`.  The number of MPI processes is controlled via `ntasks-per-node`, which initialises the environment variable `SLURM_NTASKS_PER_NODE`, while the number of threads per process is determined by `cpus-per-task`, which initialises `SLURM_CPUS_PER_TASK`.  Note that the number of processes must match that of the GPUs used.
+The example utilises 1 GPU (--gres=gpu:1) on a JADE node. Gromacs is started with a number of MPI processes (--ntasks-per-node=1) , which must match the number of requested GPUs. Each MPI process will run 5 OMP threads (--cpus-per-task=5). The number of requested MPI processes is saved in the environment variable SLURM_NTASKS_PER_NODE, while the number of threads per process is saved in SLURM_CPUS_PER_TASK.
 
-The request `--bind-to socket` is specific to OpenMPI, which was used to build Gromacs on JADE.  This extra option to the OpenMPI `mpirun` is essential in obtaining the optimal run configuration and therefore the computational performance.
+The request --bind-to socket is specific to OpenMPI, which was used to build Gromacs on JADE. This extra option to the OpenMPI mpirun is essential in obtaining the optimal run configuration and computational performance.
 
-To run the same job on an entire node, you need to change the values for `ntasks-per-node` and `gres=gpu` from 4 to 8.  To read more about Gromacs processing on GPUs, please visit https://www.nvidia.com/en-us/data-center/gpu-accelerated-applications/gromacs/ .
+To run the same job on 4 or 8 GPUs, you need to change the values of --ntasks-per-node and --gres=gpu from 1 to 4 or 8, respectively. You also need to change the partition from small to big. While running on 4 or 8 GPUs might increase the performance of a single job, **please note** that in terms of aggregate simulation time, it is more efficient to run single-GPU jobs. For example, a 4-GPU simulation of a 240,000 atom system yields about 18.5 ns/day using Gromacs2016.3, while a single-GPU simulation yields 8.4 ns/day. Thus, running four single-GPU simulations will provide almost double the throughput (4x8.4 ns/day = 33.6 ns/day) compared to a single 4-GPU simulation. More importantly, the single-GPU performance has been vastly improved in Gromacs2018, and is about double that of Gromacs2016.3. Thus, a single-GPU simulation using Gromacs2018 gives about the same performance as a 4-GPU simulation, and it is therefore **strongly advised to only run single-GPU simulations with Gromacs2018.**
+
+
+To read more about Gromacs processing on GPUs, please visit https://www.nvidia.com/en-us/data-center/gpu-accelerated-applications/gromacs/ .
 
 *Caution*: Run performance can be negatively affected by a deviation from the above "recipe".  Please modify `#SBATCH` parameters or `mpirun` command line options only if you are sure this is necessary.  A job that runs sub-optimally on half a node can affect the performance of another job on the other half of the same node, which would normally run at optimal performance on a "quiet" system.
 
