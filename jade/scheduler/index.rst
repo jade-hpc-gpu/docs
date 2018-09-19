@@ -178,7 +178,7 @@ The partitions have the following limits for submitted jobs:
 | ``big``        | 11 nodes            | 24 hours          | 5 Jobs            |
 |                |                     |                   |                   |
 +----------------+---------------------+-------------------+-------------------+
-| ``small``      | 10 nodes            | 6 days            | 16 Jobs           |
+| ``small``      | 10 nodes            | 6 days            | 8 Jobs            |
 |                |                     |                   |                   |
 +----------------+---------------------+-------------------+-------------------+
 | ``devel``      | 1 node              | 1 hour            | 1 Job             |
