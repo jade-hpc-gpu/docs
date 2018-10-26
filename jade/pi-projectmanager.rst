@@ -6,12 +6,12 @@ Information for PIs and Project Managers
 Creating a Project
 ------------------
 
-Access to the HPC systems at the Hartree Centre is available to groups of academic and industry partners. The PI (principal investigator) should complete a Project Proposal form in consultation with help desk staff and submit it for approval. Please contact `hartree@stfc.ac.uk <hartree@stfc.ac.uk>`_ for a proposal form.
+To access the JADE HPC facility, please see the information here: `Get access to JADE HPC facilities <http://www.jade.ac.uk/access>`_ 
 
 Getting an Account
 ------------------
 
-After the proposal has been approved by the Help Desk, a `SAFE <https://um.hartree.stfc.ac.uk>`_ account must be created which allows the management of **users** and **projects**. At registration, the PI provides an institutional email address which will be used as their SAFE login ID (please note, emails such as gmail or hotmail will not be accepted). An SSH Key is also required at this stage, and instructions on how to generate and upload this are provided in `SAFE User Guide <http://community.hartree.stfc.ac.uk/wiki/site/admin/home.html>`_.
+After the project proposal has been approved, a `SAFE <https://um.hartree.stfc.ac.uk>`_ account must be created which allows the management of **users** and **projects**. At registration, the PI provides an institutional email address which will be used as their SAFE login ID (please note, emails such as gmail or hotmail will not be accepted). An SSH Key is also required at this stage, and instructions on how to generate and upload this are provided in `SAFE User Guide <http://community.hartree.stfc.ac.uk/wiki/site/admin/home.html>`_.
 
 Once a project has been set up by Hartree staff, the PI can define associated project managers and then the PI and project managers are able to define groups (in a tree hierarchy), accept people into the project and allocate them to groups.
 
