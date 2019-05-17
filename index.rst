@@ -29,7 +29,7 @@ the university partners including the world-leading machine learning
 groups in Oxford, Edinburgh, KCL, QMUL, Sheffield and UCL.
 
 The system design exploits the capabilities of NVIDIA's DGX-1 Deep
-Learning System which has eight of its newest Tesla P100 GPUs tightly
+Learning System which has eight of its newest Tesla V100 GPUs tightly
 coupled by its high-speed NVlink interconnect. NVIDIA has clearly
 established itself as the leader in massively-parallel computing for
 deep neural networks, and the DGX-1 runs optimized versions of many
@@ -45,7 +45,7 @@ JADE Hardware
 =============
 
 JADE hardware consists of:
-  * 22 DGX-1 Nodes, each with 8 Nvidia P100 GPUs
+  * 22 DGX-1 Nodes, each with 8 Nvidia V100 GPUs
   * 2 Head nodes
 
 .. toctree::
