@@ -34,7 +34,7 @@ Gromacs jobs can run using 1, 4 (half a node), or 8 (full node) GPUs (please see
    module load gromacs/2018.0
 
    mpirun -np ${SLURM_NTASKS_PER_NODE} --bind-to socket \
-          gmx_mpi mdrun -s topol.tpr \
+          mdrun_mpi -s topol.tpr \
 	  -ntomp ${SLURM_CPUS_PER_TASK} &> run-gromacs.out
 
 
