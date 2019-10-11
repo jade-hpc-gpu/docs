@@ -10,18 +10,13 @@ As a regular user, getting started involves 3 steps:
 
 This is a web account which will show you which projects you belong to, and the accounts which you have in them.
 
-Before applying for a SAFE account, you should first have an SSH key-pair, and be ready to provide your public key as part of the SAFE registration process.  Information on generating and using SSH keys is available here:
-http://yukon.dl.ac.uk:8080/wiki/site/admin/SAFE%20User%20Guide.html#ssh
-but for any help you should contact your local university IT support staff.
+Before applying for a SAFE account, you should first have an SSH key-pair, and be ready to provide your public key as part of the SAFE registration process. If you need help generating an SSH key-pair, contact your local IT support staff.
 
 Once you have your public SSH key ready, apply for your SAFE account by going here:
 https://um.hartree.stfc.ac.uk/hartree/login.jsp
 and providing all of the required information.
 
 When your account has been approved, you will receive an email giving your initial password. When you login for the first time you will be asked to change it to a new one.
-
-Further details on the registration process are available here:
-http://community.hartree.stfc.ac.uk/wiki/site/admin/safe%20user%20guide.html
 
 2) Apply for a JADE project account
 -----------------------------------
