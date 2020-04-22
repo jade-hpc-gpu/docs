@@ -47,6 +47,8 @@ JADE Hardware
 JADE hardware consists of:
   * 22 DGX-1 Nodes, each with 8 Nvidia V100 GPUs
   * 2 Head nodes
+  * Mellanox EDR networking
+  * Over 1PB of Seagate ClusterStor storage
 
 .. toctree::
    :maxdepth: -1
