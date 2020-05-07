@@ -18,14 +18,14 @@ You can configure proxy connections per-repository with:
 
 .. code-block:: sh
 
-   git config http.proxy http://dgj123b:3128/
-   git config https.proxy http://dgj123b:3128/
+   git config http.proxy $http_proxy
+   git config https.proxy $https_proxy
 
 Or globally configure the use of a particular proxy with:
 
 .. code-block:: sh
 
-   git config --global http.proxy http://dgj123b:3128/
-   git config --global https.proxy http://dgj123b:3128/
+   git config --global http.proxy $http_proxy
+   git config --global https.proxy $https_proxy
 
 Then ensure you use ``https://`` rather than ``git://`` when cloning repositories on Jade.
