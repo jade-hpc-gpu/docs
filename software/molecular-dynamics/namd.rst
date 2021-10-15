@@ -23,7 +23,7 @@ Below is an example of a NAMD job script
 
     #SBATCH --nodes=1
     #SBATCH --ntassk-per-node=20
-    #SBATCH -J testNAMD
+    #SBATCH --job-name=testNAMD
     #SBATCH --time=01:00:00
     #SBATCH --gres=gpu:4
 
