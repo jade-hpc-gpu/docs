@@ -25,7 +25,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'JADE'
-copyright = u'2017, JADE Tier 2 Centre'
+copyright = u'2017-2021, JADE Tier 2 Centre'
 author = u'JADE Tier 2'
 
 # The version info for the project you're documenting, acts as replacement for
