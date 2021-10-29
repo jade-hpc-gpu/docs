@@ -39,7 +39,7 @@ Theano and Torch.
 
 This system design is also ideal for a large number of molecular
 dynamics applications and as such JADE will also provide a powerful resource
-for molecular dynamics researchers within the UK [HECBioSim](https://www.hecbiosim.ac.uk) community.
+for molecular dynamics researchers within the UK HECBioSim community.
 
 JADE Hardware
 =============
