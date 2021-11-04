@@ -47,7 +47,7 @@ Establishing a SSH connection
 
 Once you have a terminal open, run the following command to log into one of the JADE front-end nodes: ::
 
-  ssh -l $USER jade.hartree.stfc.ac.uk
+  ssh -l $USER jade2.hartree.stfc.ac.uk
 
 Here you need to replace ``$USER`` with your username (e.g. ``te1st-test``)
 
