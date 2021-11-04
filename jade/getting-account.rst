@@ -34,7 +34,7 @@ This process shouldn't take more than 2 working days.  If it takes more than tha
 
 If your SAFE userid is xyz, and your project suffix is abc, then your project account username will be xyz-abc and you will login to JADE using the command:
 
-ssh -l xyz-abc jade.hartree.stfc.ac.uk
+ssh -l xyz-abc jade2.hartree.stfc.ac.uk
 
 Note that some users may belong to more than one project, in which case they will have different account usernames for each project, and all of them will be listed on their SAFE web account.
 
@@ -48,7 +48,7 @@ Note also that JADE has multiple front-end systems, and because of this some SSH
 This is a web account used for reporting any operational issues with JADE.
 
 To obtain an account follow the directions here:
-http://community.hartree.stfc.ac.uk/wiki/site/admin/servicenow.html
+https://stfc.service-now.com/hartreecentre?id=index
 
 Note the guidance which explains that the first time you try to login you will not have a password so you need to click on the link which says "reset your password here".
 
