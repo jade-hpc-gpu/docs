@@ -2,7 +2,7 @@
 More Information
 ================
 
-JADE Web site: http://www.arc.ox.ac.uk/content/jade
+JADE Web site: http://www.jade.ac.uk
 
 Mike Giles' Web site: http://people.maths.ox.ac.uk/~gilesm/JADE/
 
