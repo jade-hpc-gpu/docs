@@ -4,7 +4,7 @@ Troubleshooting
 
 Help
 ----
-Univesities provide coordinated institutional technical support to assist local users and their developers with GPU applications and in accessing the JADE HPC facility. For more information, contact Research Software Engineers at your home univestrity.
+Univesities provide coordinated institutional technical support to assist local users and their developers with GPU applications and in accessing the JADE HPC facility. For more information, contact Research Software Engineers at your home university.
 
 Documentation
 -------------
