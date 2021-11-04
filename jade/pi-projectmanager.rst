@@ -28,10 +28,12 @@ The simplest approach is to create a single group for the Project for all users,
   2. Click the `Project Group Administration` button, then click `Add New`.
   3. Type in a name and description and click `Create`.
 
-Project Signup Code
--------------------
+Project Signup Code (instructions for institutional contacts and project managers)
+----------------------------------------------------------------------------------
 
-The **project signup code is required** so that users can request to join your project.
+A **project signup code is required** so that users can request to join projects within your institution. This will need to be provided by you to new users within your institution.
+
+Once users have applied with the project code, they will need to be added to the appropriate project group.
 
 **To set a project signup code:**
 
@@ -39,8 +41,8 @@ The **project signup code is required** so that users can request to join your p
   2. Click the `Update` button.
   3. In the **Password** field, set the desired **project signup code** and press `Update`.
 
-Adding Users to the Project
----------------------------
+Adding Users to a Project or group(instructions for institutional contacts and project managers)
+----------------------------------------------------------------------------------------
 
 After creating a group, users can be added to a project.
 
