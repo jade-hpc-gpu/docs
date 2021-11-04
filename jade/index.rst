@@ -3,7 +3,7 @@
 Using the JADE Facility
 =======================
 
-The JADE facility consists of 2 head nodes and 22 NVIDIA `DGX-1 <https://www.scan.co.uk/3xs/info/nvidia-dgx-1>`_ servers, each with 8 GPUs and 40 CPU cores.
+The JADE facility consists of 2 head nodes and 63 NVIDIA DGX-MAX-Q servers, each with 8 GPUs and 40 CPU cores.
 
 
 **Accounts**
@@ -12,7 +12,7 @@ Users get accounts on the system by following the directions in the **Getting an
 
 New users must provide a public SSH key and are given a user ID on JADE.  Using this ID, they will then be able to login to one of the head nodes by using an SSH command like ::
 
-  ssh -l account_name jade.hartree.stfc.ac.uk
+  ssh -l account_name jade2.hartree.stfc.ac.uk
 
 Further details are in the section **Connecting to the cluster using SSH**.
 
