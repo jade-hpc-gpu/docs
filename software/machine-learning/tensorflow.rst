@@ -173,7 +173,7 @@ You will see something similar to the following output. ::
 	I tensorflow/core/common_runtime/gpu/gpu_device.cc:1428] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 4322 MB memory) -> physical GPU (device: 0, name: Tesla V100-SXM2-32GB-LS, pci bus id: 0000:06:00.0, compute capability: 7.0)
 	I tensorflow/core/common_runtime/gpu/gpu_device.cc:1428] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 31031 MB memory) -> physical GPU (device: 1, name: Tesla V100-SXM2-32GB-LS, pci bus id: 0000:07:00.0, compute capability: 7.0)
 	I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublas.so.11
-tf.Tensor(
 
-        [[ 44.  56.][ 98. 128.]], shape=(2, 2), dtype=float32)
+	tf.Tensor(
+  	[[ 44.  56.][ 98. 128.]], shape=(2, 2), dtype=float32)
 
