@@ -20,26 +20,28 @@ Using Caffe Interactively
 
 All the contained applications are launched interactively in the same way within 1 compute node at a time. The number of GPUs to be used per node is requested using the “gres”  option. To request an interactive session on a compute node the following command is issued from the login node: ::
 
-  # Requesting 2 GPUs for Caffe image version 17.04
-  srun --gres=gpu:2 --pty  /jmain01/apps/docker/caffe 17.04
+  # Requesting 2 GPUs for Caffe image version 20.03-py3
+  srun --gres=gpu:2 --pty  /jmain02/apps/docker/caffe 20.03-py3
 
 This command will show the following, which is now running on a compute node: ::
 
-  ==================
-  == NVIDIA Caffe ==
-  ==================
+   ==================
+   == NVIDIA Caffe ==
+   ==================
 
-  NVIDIA Release 17.04 (build 26740)
+   NVIDIA Release 20.03 (build 11026381)
+   NVIDIA Caffe Version 0.17.3
 
-  Container image Copyright (c) 2017, NVIDIA CORPORATION.  All rights reserved.
-  Copyright (c) 2014, 2015, The Regents of the University of California (Regents)
-  All rights reserved.
+   Container image Copyright (c) 2019, NVIDIA CORPORATION.  All rights reserved.
+   Copyright (c) 2014, 2015, The Regents of the University of California (Regents)
+   All rights reserved.
 
-  Various files include modifications (c) NVIDIA CORPORATION.  All rights reserved.
-  NVIDIA modifications are covered by the license terms that apply to the underlying project or file.
+   Various files include modifications (c) NVIDIA CORPORATION.  All rights reserved.
+   NVIDIA modifications are covered by the license terms that apply to the underlying project or file.
 
-  groups: cannot find name for group ID 1002
-  I have no name!@124cf0e3582e:/home_directory$
+
+   groups: cannot find name for group ID 1002
+   I have no name!@124cf0e3582e:/home_directory$
 
 .. note::
 
@@ -47,7 +49,7 @@ This command will show the following, which is now running on a compute node: ::
 
 .. note::
 
-  Inside the container, your home directory on the outside e.g. ``/jmain01/home/JAD00X/test/test1-test`` is mapped to the ``/home_directory`` folder inside the container.
+  Inside the container, your home directory on the outside e.g. ``/jmain02/home/JAD00X/test/test1-test`` is mapped to the ``/home_directory`` folder inside the container.
 
   You can test this by using the command:
     ls /home_directory
@@ -58,7 +60,7 @@ You are now inside the container where ``Caffe`` is installed. Let's check by as
 
 Where you will get something like: ::
 
-  caffe version 0.16.0
+  caffe version 0.17.3
 
 
 
@@ -110,7 +112,7 @@ Then create a **Slurm batch script** that is used to launch the code, e.g. ``bat
 
 
   #Launching the commands within script.sh
-  /jmain01/apps/docker/caffe-batch -c ./script.sh
+  /jmain02/apps/docker/caffe-batch -c ./script.sh
 
 You can then submit the job using ``sbatch``: ::
 
@@ -126,23 +128,18 @@ The output will appear in the slurm standard output file with the corresponding 
   == NVIDIA Caffe ==
   ==================
 
-  NVIDIA Release 17.04 (build 26740)
+  NVIDIA Release 20.03 (build 11026381)
+  NVIDIA Caffe Version 0.17.3
 
-  Container image Copyright (c) 2017, NVIDIA CORPORATION.  All rights reserved.
+  Container image Copyright (c) 2019, NVIDIA CORPORATION.  All rights reserved.
   Copyright (c) 2014, 2015, The Regents of the University of California (Regents)
   All rights reserved.
 
   Various files include modifications (c) NVIDIA CORPORATION.  All rights reserved.
   NVIDIA modifications are covered by the license terms that apply to the underlying project or file.
 
-  caffe version 0.16.0
 
-
-
-
-
-
-
+  caffe version 0.17.3
 
 
 
