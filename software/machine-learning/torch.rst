@@ -20,8 +20,8 @@ Using Torch Interactively
 
 All the contained applications are launched interactively in the same way within 1 compute node at a time. The number of GPUs to be used per node is requested using the “gres”  option. To request an interactive session on a compute node the following command is issued from the login node: ::
 
-  # Requesting 2 GPUs for Torch image version 17.04
-  srun --gres=gpu:2 --pty  /jmain01/apps/docker/torch 17.04
+  # Requesting 2 GPUs for Torch image version 18.08-py2
+  srun --gres=gpu:2 --pty  /jmain02/apps/docker/torch 18.08-py2
 
 This command will show the following, which is now running on a compute node: ::
 
@@ -31,14 +31,15 @@ This command will show the following, which is now running on a compute node: ::
    /_/  \___/_/  \__/_//_/  |  https://github.com/torch
                             |  http://torch.ch
 
-  NVIDIA Release 17.04 (build 17724)
+  NVIDIA Release 18.08 (build 598611)
 
-  Container image Copyright (c) 2017, NVIDIA CORPORATION.  All rights reserved.
+  Container image Copyright (c) 2018, NVIDIA CORPORATION.  All rights reserved.
   Copyright (c) 2016, Soumith Chintala, Ronan Collobert, Koray Kavukcuoglu, Clement Farabet
   All rights reserved.
 
   Various files include modifications (c) NVIDIA CORPORATION.  All rights reserved.
   NVIDIA modifications are covered by the license terms that apply to the underlying project or file.
+
 
   groups: cannot find name for group ID 30773
   I have no name!@f1915084ec5f:/home_directory$
@@ -49,7 +50,7 @@ This command will show the following, which is now running on a compute node: ::
 
 .. note::
 
-  Inside the container, your home directory on the outside e.g. ``/jmain01/home/JAD00X/test/test1-test`` is mapped to the ``/home_directory`` folder inside the container.
+  Inside the container, your home directory on the outside e.g. ``/jmain02/home/JAD00X/test/test1-test`` is mapped to the ``/home_directory`` folder inside the container.
 
   You can test this by using the command:
     ls /home_directory
@@ -69,7 +70,7 @@ Where you will the torch command prompt: ::
    /_  __/__  ________/ /   |  Scientific computing for Lua.
     / / / _ \/ __/ __/ _ \  |  Type ? for help
    /_/  \___/_/  \__/_//_/  |  https://github.com/torch
-                            |  http://torch.ch
+                          |  http://torch.ch
 
   th>
 
@@ -163,7 +164,7 @@ Then create a **Slurm batch script** that is used to launch the code, e.g. ``bat
   #SBATCH --mail-user=your.mail@yourdomain.com
 
   #Launching the commands within script.sh
-  /jmain01/apps/docker/torch-batch -c ./script.sh
+  /jmain02/apps/docker/torch-batch -c ./script.sh
 
 You can then submit the job using ``sbatch``: ::
 
@@ -179,11 +180,11 @@ The output will appear in the slurm standard output file with the corresponding 
    /_  __/__  ________/ /   |  Scientific computing for Lua.
     / / / _ \/ __/ __/ _ \  |
    /_/  \___/_/  \__/_//_/  |  https://github.com/torch
-                            |  http://torch.ch
+                          |  http://torch.ch
 
-  NVIDIA Release 17.04 (build 17724)
+  NVIDIA Release 18.08 (build 598611)
 
-  Container image Copyright (c) 2017, NVIDIA CORPORATION.  All rights reserved.
+  Container image Copyright (c) 2018, NVIDIA CORPORATION.  All rights reserved.
   Copyright (c) 2016, Soumith Chintala, Ronan Collobert, Koray Kavukcuoglu, Clement Farabet
   All rights reserved.
 
