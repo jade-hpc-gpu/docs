@@ -202,8 +202,8 @@ Monitoring jobs with the command squeue
 The command ``squeue`` prints the list of current jobs.  The list looks something like this: ::
 
   | JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
-  |  2497     devel     srun      bob  R       0:07      1 dgj416
-  |  2499       big     test1    mary  R       0:22      4 dgj[101,104]
+  |  2497     devel     srun      bob  R       0:07      1 dgk119
+  |  2499       big     test1    mary  R       0:22      4 dgk[201,204]
   |  2511     small     test2   steve PD       0:00      4 (Resources)
 
 The first column gives the job ID, the second the partition where the job was submitted, the third the name of the job (specified by the user in the submission script) and the fourth the user ID of the job owner.  The fifth is the status of the job (**R** = running, **PD** = pending, **CA** = cancelled, **CF** = configuring, **CG** = completing, **CD** = completed, **F** = failed). The sixth column gives the elapsed time for each particular job.  Finally, there are the number of nodes requested and the nodelist where the job is running (or the cause that it is not running).
