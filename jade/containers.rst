@@ -20,18 +20,18 @@ To list the containers and version available on the system do:
 
 ::
 
-    root@dgj223:~# containers
-    REPOSITORY                  TAG                 IMAGE ID            CREATED             SIZE
-    nvcr.io/nvidia/caffe        17.11               74f90888fb24        4 weeks ago         3.247 GB
-    nvcr.io/nvidia/theano       17.11               39aed30f94ed        6 weeks ago         3.367 GB
-    nvcr.io/nvidia/torch        17.11               1fb9e886f48c        6 weeks ago         3.267 GB
-    nvcr.io/nvidia/caffe2       17.10               2ff2ccd2c8c1        10 weeks ago        2.731 GB
-    nvcr.io/nvidia/tensorflow   17.07               94b1afe1821c        5 months ago        4.404 GB
-    nvidia/cuda                 latest              15e5dedd88c5        7 months ago        1.67 GB
-    nvcr.io/nvidia/caffe        17.04               87c288427f2d        7 months ago        2.794 GB
-    nvcr.io/nvidia/theano       17.04               24943feafc9b        8 months ago        2.386 GB
-    nvcr.io/nvidia/torch        17.04               a337ffb42c8e        8 months ago        2.9 GB
-    Last updated:Tue Dec 19 01:00:01 GMT 2017
+    -bash-4.2$ containers
+    REPOSITORY                   TAG                     IMAGE ID       CREATED         SIZE
+    nvcr.io/nvidia/tensorflow    20.11-tf2-py3           98a7952f7f9c   5 weeks ago     11.6GB
+    nvcr.io/nvidia/pytorch       20.11-py3               ae35b2b3cad1   5 weeks ago     13.2GB
+    nvcr.io/nvidia/l4t-pytorch   r32.4.4-pth1.6-py3      78f267ed1c22   8 weeks ago     2.2GB
+    nvcr.io/hpc/namd             3.0-alpha3-singlenode   205dd048d054   5 months ago    1.24GB
+    nvcr.io/hpc/gromacs          2020.2                  c8a188675719   5 months ago    570MB
+    nvcr.io/nvidia/caffe         20.03-py3               aa6834df762b   9 months ago    4.82GB
+    nvcr.io/nvidia/caffe2        18.08-py3               e82334d03b18   2 years ago     3.02GB
+    nvcr.io/nvidia/theano        18.08                   1462ba2d70fe   2 years ago     3.7GB
+    nvcr.io/nvidia/torch         18.08-py2               889c9b4d3b71   2 years ago     3.06GB
+
 
 
 Interactive Mode
@@ -41,43 +41,57 @@ All the applications in containers can be launched interactively in the same way
 
 ::
 
-    srun --gres=gpu:2 --pty /jmain01/apps/docker/caffe 17.04
+    srun --gres=gpu:2 --pty /jmain02/apps/docker/pytorch 20.11-py3
 
 This command will show the following, which is now running on a compute node:
 
 ::
 
-    ================
-    ==NVIDIA Caffe==
-    ================
+    =============
+    == PyTorch ==
+    =============
 
-    NVIDIA Release 17.04 (build 26740)
+    NVIDIA Release 20.11 (build 17345815)
+    PyTorch Version 1.8.0a0+17f8c32
 
-    Container image Copyright (c) 2017, NVIDIA CORPORATION.  All rights reserved.
-    Copyright (c) 2014, 2015, The Regents of the University of California (Regents)
+    Container image Copyright (c) 2020, NVIDIA CORPORATION.  All rights reserved.
+
+    Copyright (c) 2014-2020 Facebook Inc.
+    Copyright (c) 2011-2014 Idiap Research Institute (Ronan Collobert)
+    Copyright (c) 2012-2014 Deepmind Technologies    (Koray Kavukcuoglu)
+    Copyright (c) 2011-2012 NEC Laboratories America (Koray Kavukcuoglu)
+    Copyright (c) 2011-2013 NYU                      (Clement Farabet)
+    Copyright (c) 2006-2010 NEC Laboratories America (Ronan Collobert, Leon Bottou, Iain Melvin, Jason Weston)
+    Copyright (c) 2006      Idiap Research Institute (Samy Bengio)
+    Copyright (c) 2001-2004 Idiap Research Institute (Ronan Collobert, Samy Bengio, Johnny Mariethoz)
+    Copyright (c) 2015      Google Inc.
+    Copyright (c) 2015      Yangqing Jia
+    Copyright (c) 2013-2016 The Caffe contributors
     All rights reserved.
+
+    NVIDIA Deep Learning Profiler (dlprof) Copyright (c) 2020, NVIDIA CORPORATION.  All rights reserved.
 
     Various files include modifications (c) NVIDIA CORPORATION.  All rights reserved.
     NVIDIA modifications are covered by the license terms that apply to the underlying project or file.
 
-    groups: cannot find name for group ID 1002
-    I have no name!@124cf0e3582e:/home_directory$
+    NOTE: Legacy NVIDIA Driver detected.  Compatibility mode ENABLED.
+
+    groups: cannot find name for group ID 31196
+    I have no name!@085a165a38ee:/home_directory$
+
 
 Note. The warnings in the last two lines can be ignored. To exit the container, issue the "exit" command. To launch the other containers the commands are:
 
 ::
 
-    srun --gres=gpu:8 --pty /jmain01/apps/docker/theano 17.04
-    srun --gres=gpu:4 --pty /jmain01/apps/docker/torch 17.04
+    srun --gres=gpu:8 --pty /jmain02/apps/docker/theano 18.08
+    srun --gres=gpu:4 --pty /jmain02/apps/docker/torch 18.08-py2
 
 Batch Mode
 ~~~~~~~~~~~~~~~~~~~~~~
 
-There are wrappers for launching the containers in batch mode. For example, to launch the Torch application change directory to where the launching script is, in this case called ``submit-char.sh``:
-
+There are wrappers for launching the containers in batch mode. For example, to launch the Torch application:
 ::
-
-    cd /jmain01/home/atostest/char-rnn-master
 
 A Slurm batch script is used to launch the code, such as:
 
@@ -89,7 +103,7 @@ A Slurm batch script is used to launch the code, such as:
     #SBATCH --gres=gpu:8
     #SBATCH --time=01:00:00
 
-    /jmain01/apps/docker/torch-batch -c ./submit-char.sh
+    /jmain02/apps/docker/torch-batch -c ./submit-char.sh
 
 The output will appear in the slurm standard output file.
 
@@ -97,15 +111,15 @@ Each of the containerised applications has its own batch launching script:
 
 ::
 
-    /jmain01/apps/docker/torch-batch
-    /jmain01/apps/docker/caffe-batch
-    /jmain01/apps/docker/theano-batch
+    /jmain02/apps/docker/torch-batch
+    /jmain02/apps/docker/caffe-batch
+    /jmain02/apps/docker/theano-batch
 
 
 Singularity Containers
 ----------
 
-Singularity 2.4 is installed in ``/jmain01/apps/singularity/2.4``. When you build your container, within your own environment, your container you must have the following directories:
+Singularity 2.4 is installed in ``/jmain02/apps/singularity/2.4``. When you build your container, within your own environment, your container you must have the following directories:
 
 ::
 
@@ -115,9 +129,9 @@ Singularity 2.4 is installed in ``/jmain01/apps/singularity/2.4``. When you buil
 
 These will be mounted by the local node when your container executes. The ``/tmp`` & ``/local_scratch`` directory are the local RAID disks on the DGX node and should be used for building code or temporary files. 
 
-Unlike Docker containers, the home directory the same as when you're outside the container (e.g. ``/jmain01/home/your_project/your_group/your_username``). You can use ``cd ~`` to get to your home directory and ``echo $HOME`` to print out your home location.
+Unlike Docker containers, the home directory the same as when you're outside the container (e.g. ``/jmain02/home/your_project/your_group/your_username``). You can use ``cd ~`` to get to your home directory and ``echo $HOME`` to print out your home location.
 
-There are 2 scripts in the ``/jmain01/apps/singularity/2.4/bin`` directory that you can use to launch your container using Slurm:
+There are 2 scripts in the ``/jmain02/apps/singularity/2.4/bin`` directory that you can use to launch your container using Slurm:
 
 ::
 
@@ -138,7 +152,7 @@ You should use these scripts with Slurm. So for example with an INTERACTIVE sess
 ::
 
     module load singularity
-    srun -I --pty -t 0-10:00 --gres gpu:1 -p small singinteractive /jmain01/apps/singularity/singularity-images/caffe-gpu.img
+    srun -I --pty -t 0-10:00 --gres gpu:1 -p small singinteractive /jmain02/apps/singularity/singularity-images/caffe-gpu.img
 
 If you want to run in batch mode, you should call ``singbatch`` (using sbatch) and provide a script to execute within the container.
 
