@@ -115,7 +115,7 @@ Each of the containerised applications has its own batch launching script:
     /jmain02/apps/docker/caffe-batch
     /jmain02/apps/docker/theano-batch
 
-<!--
+<!---
 Singularity Containers
 ----------
 
