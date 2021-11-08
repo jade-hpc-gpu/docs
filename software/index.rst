@@ -22,9 +22,9 @@ This software has been built from source and installed as modules. To list the s
 
    $ module avail
    ----------------------------------------------- /jmain02/apps/Modules/modulefiles/packages ------------------------------------------------------------------------------
-   autodock-gpu/1.5.2    gnuplot/5.2.8                  gromacs/2021.1        namd/2.14              opencv/4.2.0    pytorch/1.9.0       tmux/3.2a (D)
-   emacs/27.1            gromacs/2020.3                 gromacs/2021.2 (D)    namd/3.0-alpha7 (D)    openmm/7.5.0    sox/14.4.2          vim/8.2
-   ffmpeg/4.2.2          gromacs/2020.4-plumed-2.6.2    mdtraj/1.9.5          nano/5.3               plumed/2.6.2    tensorflow/2.3.1
+   autodock-gpu/1.5.2   gnuplot/5.2.8                 gromacs/2021.1       namd/2.14            opencv/4.2.0   pytorch/1.9.0     tmux/3.2a (D)
+   emacs/27.1           gromacs/2020.3                gromacs/2021.2 (D)   namd/3.0-alpha7 (D)  openmm/7.5.0   sox/14.4.2        vim/8.2
+   ffmpeg/4.2.2         gromacs/2020.4-plumed-2.6.2   mdtraj/1.9.5         nano/5.3             plumed/2.6.2   tensorflow/2.3.1
    
 
 
