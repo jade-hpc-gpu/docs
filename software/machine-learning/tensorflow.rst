@@ -5,7 +5,7 @@ Tensorflow
 
 .. sidebar:: Tensorflow
 
-   :URL: https://www.tensorflow.org/
+   :URL: https://www.tensorflow.org/ 
 
 TensorFlow is an open source software library for numerical computation using data flow graphs. Nodes in the graph represent mathematical operations, while the graph edges represent the multidimensional data arrays (tensors) communicated between them. The flexible architecture allows you to deploy computation to one or more CPUs or GPUs in a desktop, server, or mobile device with a single API. TensorFlow was originally developed by researchers and engineers working on the Google Brain Team within Google's Machine Intelligence research organization for the purposes of conducting machine learning and deep neural networks research, but the system is general enough to be applicable in a wide variety of other domains as well.
 
@@ -19,8 +19,8 @@ Using Tensorflow Interactively
 
 All the contained applications are launched interactively in the same way within 1 compute node at a time. The number of GPUs to be used per node is requested using the “gres”  option. To request an interactive session on a compute node the following command is issued from the login node: ::
 
-  # Requesting 2 GPUs for Tensorflow image version 17.07
-  srun --gres=gpu:2 --pty  /jmain01/apps/docker/tensorflow 17.07
+  # Requesting 2 GPUs for Tensorflow image version 20.11-tf2-py3 
+  srun --gres=gpu:2 --pty  /jmain02/apps/docker/tensorflow 20.11-tf2-py3 
 
 This command will show the following, which is now running on a compute node: ::
 
@@ -28,13 +28,16 @@ This command will show the following, which is now running on a compute node: ::
   == TensorFlow ==
   ================
 
-  NVIDIA Release 17.07 (build 84991)
+  NVIDIA Release 20.11-tf2 (build 17379986)
+  TensorFlow Version 2.3.1
 
-  Container image Copyright (c) 2017, NVIDIA CORPORATION.  All rights reserved.
-  Copyright 2017 The TensorFlow Authors.  All rights reserved.
+  Container image Copyright (c) 2020, NVIDIA CORPORATION.  All rights reserved.
+  Copyright 2017-2020 The TensorFlow Authors.  All rights reserved.
 
   Various files include modifications (c) NVIDIA CORPORATION.  All rights reserved.
   NVIDIA modifications are covered by the license terms that apply to the underlying project or file.
+
+  NOTE: Legacy NVIDIA Driver detected.  Compatibility mode ENABLED.
 
   groups: cannot find name for group ID 30773
   I have no name!@d129dbb678f2:/home_directory$
@@ -45,7 +48,7 @@ This command will show the following, which is now running on a compute node: ::
 
 .. note::
 
-  Inside the container, your home directory on the outside e.g. ``/jmain01/home/JAD00X/test/test1-test`` is mapped to the ``/home_directory`` folder inside the container.
+  Inside the container, your home directory on the outside e.g. ``/jmain02/home/JAD00X/test/test1-test`` is mapped to the ``/home_directory`` folder inside the container.
 
   You can test this by using the command:
     ls /home_directory
@@ -58,10 +61,8 @@ You can test that ``Tensorflow`` is running on the GPU with the following python
     a = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[2, 3], name='a')
     b = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[3, 2], name='b')
     c = tf.matmul(a, b)
-  # Creates a session with log_device_placement set to True.
-  sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
   # Runs the op.
-  print(sess.run(c))
+  print(c)
 
 Run the ``tftest.py`` script with the following command: ::
 
@@ -69,8 +70,10 @@ Run the ``tftest.py`` script with the following command: ::
 
 Which gives the following results: ::
 
-	[[ 22.  28.]
-	 [ 49.  64.]]
+tf.Tensor(
+[[22. 28.]
+ [49. 64.]], shape=(2, 2), dtype=float32)
+
 
 Using Tensorflow in Batch Mode
 ------------------------------
@@ -116,7 +119,7 @@ Then create a **Slurm batch script** that is used to launch the code, e.g. ``bat
 
 
   #Launching the commands within script.sh
-  /jmain01/apps/docker/tensorflow-batch -c ./script.sh
+  /jmain02/apps/docker/tensorflow-batch -c ./script.sh
 
 You can then submit the job using ``sbatch``: ::
 
@@ -132,13 +135,16 @@ The output will appear in the slurm standard output file with the corresponding 
   == TensorFlow ==
   ================
 
-  NVIDIA Release 17.07 (build 84991)
+  NVIDIA Release 20.11-tf2 (build 17379986)
+  TensorFlow Version 2.3.1
 
-  Container image Copyright (c) 2017, NVIDIA CORPORATION.  All rights reserved.
-  Copyright 2017 The TensorFlow Authors.  All rights reserved.
+  Container image Copyright (c) 2020, NVIDIA CORPORATION.  All rights reserved.
+  Copyright 2017-2020 The TensorFlow Authors.  All rights reserved.
 
   Various files include modifications (c) NVIDIA CORPORATION.  All rights reserved.
   NVIDIA modifications are covered by the license terms that apply to the underlying project or file.
+
+  NOTE: Legacy NVIDIA Driver detected.  Compatibility mode ENABLED.
 
   [[ 22.  28.]
 	 [ 49.  64.]]
@@ -161,28 +167,15 @@ If you would like to run TensorFlow on multiple GPUs, you can construct your mod
 	    c.append(tf.matmul(a, b))
 	with tf.device('/cpu:0'):
 	  sum = tf.add_n(c)
-	# Creates a session with log_device_placement set to True.
-	sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
 	# Runs the op.
-	print sess.run(sum)
+	print (sum)
 
 You will see something similar to the following output. ::
 
-	Device mapping:
-	/job:localhost/replica:0/task:0/gpu:0 -> device: 0, name: Tesla K20m, pci bus
-	id: 0000:02:00.0
-	/job:localhost/replica:0/task:0/gpu:1 -> device: 1, name: Tesla K20m, pci bus
-	id: 0000:03:00.0
-	/job:localhost/replica:0/task:0/gpu:2 -> device: 2, name: Tesla K20m, pci bus
-	id: 0000:83:00.0
-	/job:localhost/replica:0/task:0/gpu:3 -> device: 3, name: Tesla K20m, pci bus
-	id: 0000:84:00.0
-	Const_3: /job:localhost/replica:0/task:0/gpu:3
-	Const_2: /job:localhost/replica:0/task:0/gpu:3
-	MatMul_1: /job:localhost/replica:0/task:0/gpu:3
-	Const_1: /job:localhost/replica:0/task:0/gpu:2
-	Const: /job:localhost/replica:0/task:0/gpu:2
-	MatMul: /job:localhost/replica:0/task:0/gpu:2
-	AddN: /job:localhost/replica:0/task:0/cpu:0
-	[[  44.   56.]
-	 [  98.  128.]]
+	I tensorflow/core/common_runtime/gpu/gpu_device.cc:1428] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 4322 MB memory) -> physical GPU (device: 0, name: Tesla V100-SXM2-32GB-LS, pci bus id: 0000:06:00.0, compute capability: 7.0)
+	I tensorflow/core/common_runtime/gpu/gpu_device.cc:1428] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 31031 MB memory) -> physical GPU (device: 1, name: Tesla V100-SXM2-32GB-LS, pci bus id: 0000:07:00.0, compute capability: 7.0)
+	I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcublas.so.11
+tf.Tensor(
+[[ 44.  56.]
+ [ 98. 128.]], shape=(2, 2), dtype=float32)
+
