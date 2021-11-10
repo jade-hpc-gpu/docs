@@ -43,7 +43,7 @@ For information on your disk space usage and remaining quota, use the following 
   quota -hu account_name /jmain02
 
 For example:
-
+::
     quota -hu abc18-wga20 /jmain02
     Disk quotas for usr abc18-wga20 (uid 1234):
     Filesystem    used   quota   limit   grace   files   quota   limit   grace
