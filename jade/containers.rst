@@ -119,7 +119,7 @@ Each of the containerised applications has its own batch launching script:
 Singularity Containers
 ----------
 
-Singularity 2.4 is installed in ``/jmain02/apps/singularity/2.4``. When you build your container, within your own environment, your container you must have the following directories:
+Singularity 3.7 is installed on compute nodes, it is not available on login nodes. When you build your container, within your own environment, your container you must have the following directories:
 
 ::
 
@@ -151,7 +151,6 @@ You should use these scripts with Slurm. So for example with an INTERACTIVE sess
 
 ::
 
-    module load singularity
     srun -I --pty -t 0-10:00 --gres gpu:1 -p small singinteractive /jmain02/apps/singularity/singularity-images/caffe-gpu.img
 
 If you want to run in batch mode, you should call ``singbatch`` (using sbatch) and provide a script to execute within the container.
