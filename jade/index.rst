@@ -44,12 +44,10 @@ For information on your disk space usage and remaining quota, use the following 
 
 For example:
 
-```
-  quota -hu abc18-wga20 /jmain02
-  Disk quotas for usr abc18-wga20 (uid 1234):
-  Filesystem    used   quota   limit   grace   files   quota   limit   grace
-  /jmain02     44k      0k      0k       -      12       0       0       -
-```
+    quota -hu abc18-wga20 /jmain02
+    Disk quotas for usr abc18-wga20 (uid 1234):
+    Filesystem    used   quota   limit   grace   files   quota   limit   grace
+    /jmain02     44k      0k      0k       -      12       0       0       -
 
 There is also access to local disc space on each compute node, but this access only possible during a Slurm job and once the job is completed the local disc data is removed automatically.  In machine learning applications, for example, this local disc space (provided by fast SSD) may be useful as a staging point for very large training sets.
 
