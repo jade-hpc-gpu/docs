@@ -7,3 +7,5 @@ get_docs.py
 *.*~
 old_makefile/
 jade.rst
+.idea/
+venv/
