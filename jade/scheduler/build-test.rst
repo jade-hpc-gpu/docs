@@ -217,7 +217,7 @@ Some useful command line options for ``squeue`` include:
 * ``-j`` for showing information regarding a particular job ID, *e.g.*  ``squeue -j 7890``;
 * ``--start`` to report  the  expected  start  time  of pending jobs.
 
-Read all the options for squeue on the man page squeue(1) using the command ``man squeue``, including how to personalize the information to be displayed.
+Read all the options for squeue using the command ``man squeue``, including how to personalize the information to be displayed.
 
 
 Deleting jobs with the command scancel
