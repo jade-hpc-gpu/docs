@@ -90,7 +90,7 @@ In addition to the above commands, the table below gives two more commands that 
 Preparing a submission script
 -----------------------------
 
-A submission script is a Linux shell script that
+A submission script is a shell script that
 
 * describes the processing to carry out (*e.g.* the application, its input and output, etc.) and
 * requests computer resources (number of GPUs, amount of memory, etc.) to use for processing.
@@ -129,7 +129,7 @@ Supposing the application run is called ``myCode`` and takes no command line arg
   # run the application
   myCode
 
-The script starts with ``#!/bin/bash`` (also called a shebang), which makes the submission script a Linux bash script.
+The script starts with ``#!/bin/bash`` (also called a shebang), which makes the submission script a GNU bash script.
 
 The script continues with a series of lines starting with ``#``, which represent bash script comments.  For Slurm, the lines starting with ``#SBATCH`` are directives that request job scheduling resources.  (Note: it is important that you put all the directives at the top of a script, before any other commands; any ``#SBATCH`` directive coming after a bash script command is ignored!)
 
@@ -141,7 +141,7 @@ The name the job is identified by in the queue can be specified too with ``#SBAT
 
 Lastly, an email notification is sent if an address is specified with ``#SBATCH --mail-user=<email_address>``.  The notification options can be set with ``#SBATCH --mail-type=<type>``, where ``<type>`` may be ``BEGIN``, ``END``, ``FAIL``, ``REQUEUE`` or ``ALL`` (for any change of job state).
 
-The final part of a script is normal Linux bash script and describes the set of operations to follow as part of the job.  The job starts in the same folder where it was submitted (unless an alternative path is specified), and with the same environment variables (modules, etc.) that the user had at the time of the submission.  In this example, this final part only involves invoking the ``myCode`` application executable.
+The final part of a script is normal GNU bash script and describes the set of operations to follow as part of the job.  The job starts in the same folder where it was submitted (unless an alternative path is specified), and with the same environment variables (modules, etc.) that the user had at the time of the submission.  In this example, this final part only involves invoking the ``myCode`` application executable.
 
 
 Submitting jobs with the command sbatch
@@ -217,7 +217,7 @@ Some useful command line options for ``squeue`` include:
 * ``-j`` for showing information regarding a particular job ID, *e.g.*  ``squeue -j 7890``;
 * ``--start`` to report  the  expected  start  time  of pending jobs.
 
-Read all the options for squeue on the Linux manual using the command ``man squeue``, including how to personalize the information to be displayed.
+Read all the options for squeue on the man page squeue(1) using the command ``man squeue``, including how to personalize the information to be displayed.
 
 
 Deleting jobs with the command scancel
