@@ -9,7 +9,7 @@ Python
    :URL: https://www.anaconda.com
 
 
-This page documents the python and Anaconda installation on ShARC. This is the
+This page documents the python and Anaconda installation on JADE. This is the
 recommended way of using Python, and the best way to be able to configure custom
 sets of packages for your use.
 
@@ -36,12 +36,12 @@ Using conda Python
 
 Conda version ``4.3.30`` is available for both Python 2 and 3 and can be loaded through provided module files: ::
 
-  apps/python2/anaconda
-  apps/python3/anaconda
+  python2/anaconda
+  python3/anaconda
 
 Use the ``module load`` command to load a particular Anaconda Python version e.g. Anaconda for Python 3: ::
 
-  module load apps/python3/anaconda
+  module load python3/anaconda
 
 
 Using conda Environments
