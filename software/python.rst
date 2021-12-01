@@ -9,7 +9,7 @@ Python
    :URL: https://www.anaconda.com
 
 
-This page documents the python and Anaconda installation on ShARC. This is the
+This page documents the python and Anaconda installation on JADE. This is the
 recommended way of using Python, and the best way to be able to configure custom
 sets of packages for your use.
 
