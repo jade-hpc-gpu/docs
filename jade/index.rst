@@ -40,11 +40,11 @@ The global file system is accessible from both the head nodes and the compute no
 
 For information on your disk space usage and remaining quota, use the following command ::
 
-  quota -hu account_name /jmain02
+  lfs quota -hu account_name /jmain02
 
 For example:
 ::
-    quota -hu abc18-wga20 /jmain02
+    lfs quota -hu $USER /jmain02
     Disk quotas for usr abc18-wga20 (uid 1234):
     Filesystem    used   quota   limit   grace   files   quota   limit   grace
     /jmain02     44k      0k      0k       -      12       0       0       -
