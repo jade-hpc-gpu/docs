@@ -131,7 +131,7 @@ These will be mounted by the local node when your container executes. The ``/tmp
 
 Unlike Docker containers, the home directory the same as when you're outside the container (e.g. ``/jmain02/home/your_project/your_group/your_username``). You can use ``cd ~`` to get to your home directory and ``echo $HOME`` to print out your home location.
 
-There are 2 scripts in the ``/jmain02/apps/singularity/2.4/bin`` directory that you can use to launch your container using Slurm:
+There are 2 scripts in the ``/jmain02/apps/singularity`` directory that you can use to launch your container using Slurm:
 
 ::
 
@@ -151,7 +151,7 @@ You should use these scripts with Slurm. So for example with an INTERACTIVE sess
 
 ::
 
-    srun -I --pty -t 0-10:00 --gres gpu:1 -p small singinteractive /jmain02/apps/singularity/singularity-images/caffe-gpu.img
+    srun -I --pty -t 0-10:00 --gres gpu:1 -p small /jmain02/apps/singularity/singinteractive /jmain02/apps/singularity/singularity-images/caffe-gpu.img
 
 If you want to run in batch mode, you should call ``singbatch`` (using sbatch) and provide a script to execute within the container.
 
