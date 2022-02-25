@@ -47,9 +47,6 @@ Note also that JADE has multiple front-end systems, and because of this some SSH
 
 This is a web account used for reporting any operational issues with JADE.
 
-To obtain an account follow the directions here:
-https://stfc.service-now.com/hartreecentre?id=index
+To obtain an account [click the link](https://stfc.service-now.com/hcssp?id=csm_registration).
 
-Note the guidance which explains that the first time you try to login you will not have a password so you need to click on the link which says "reset your password here".
-
-Due to a problem with synchronising userids between ServiceNow and JADE, it is possible that ServiceNow may say that your email address is not recognised.  If this happens, please send an email to hartree@stfc.ac.uk and ask them to add you to the ServiceNow database.
+You can apply for a new user account there, and after the approval you will be able to access the Service Now portal.
