@@ -47,6 +47,6 @@ Note also that JADE has multiple front-end systems, and because of this some SSH
 
 This is a web account used for reporting any operational issues with JADE.
 
-To obtain an account [click the link](https://stfc.service-now.com/hcssp?id=csm_registration).
+To obtain an account `click the link <https://stfc.service-now.com/hcssp?id=csm_registration>`_.
 
 You can apply for a new user account there, and after the approval you will be able to access the Service Now portal.
