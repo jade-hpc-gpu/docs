@@ -45,8 +45,6 @@ Note also that JADE has multiple front-end systems, and because of this some SSH
 3) Apply for a Hartree ServiceNow account
 -----------------------------------------
 
-This is a web account used for reporting any operational issues with JADE.
+This is a web account used for reporting any operational issues with JADE. The account has to be created separately from your SAFE account.
 
-To obtain an account `click the link <https://stfc.service-now.com/hcssp?id=csm_registration>`_.
-
-You can apply for a new user account there, and after the approval you will be able to access the Service Now portal.
+ServiceNow can be found at `https://stfc.service-now.com/hcssp <https://stfc.service-now.com/hcssp>`_. Click on the `register <https://stfc.service-now.com/hcssp?id=csm_registration`_ link to create an account. After the approval you will be able to access the Service Now portal.
