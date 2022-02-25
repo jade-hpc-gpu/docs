@@ -47,4 +47,4 @@ Note also that JADE has multiple front-end systems, and because of this some SSH
 
 This is a web account used for reporting any operational issues with JADE. The account has to be created separately from your SAFE account.
 
-ServiceNow can be found at `https://stfc.service-now.com/hcssp <https://stfc.service-now.com/hcssp>`_. Click on the `register <https://stfc.service-now.com/hcssp?id=csm_registration`_ link to create an account. After the approval you will be able to access the Service Now portal.
+ServiceNow can be found at `https://stfc.service-now.com/hcssp <https://stfc.service-now.com/hcssp>`_. Click on the `register <https://stfc.service-now.com/hcssp?id=csm_registration>`_ link to create an account. After the approval you will be able to access the Service Now portal.
