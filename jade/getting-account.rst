@@ -10,7 +10,7 @@ As a regular user, getting started involves 3 steps:
 
 This is a web account which will show you which projects you belong to, and the accounts which you have in them.
 
-Before applying for a SAFE account, you should first have an SSH key-pair, and be ready to provide your public key as part of the SAFE registration process. If you need help generating an SSH key-pair, contact your local IT support staff.
+Before applying for a SAFE account, you should first have an SSH key-pair, and be ready to provide your public key as part of the SAFE registration process. See :ref:`connecting-generate-ssh-keys` or contact your local IT support staff if you need further assistance.
 
 Once you have your public SSH key ready, apply for your SAFE account by going here:
 https://um.hartree.stfc.ac.uk/hartree/login.jsp
