@@ -35,7 +35,7 @@ To list the containers and version available on the system do:
 
 
 Interactive Mode
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 All the applications in containers can be launched interactively in the same way using 1 compute node at a time. The number of GPUs to be used per node is requested using the ``gres`` option. To request an interactive session on a compute node the following command is issued from the login node:
 
@@ -88,13 +88,11 @@ Note. The warnings in the last two lines can be ignored. To exit the container, 
     srun --gres=gpu:4 --pty /jmain02/apps/docker/torch 18.08-py2
 
 Batch Mode
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~
 
 There are wrappers for launching the containers in batch mode. For example, to launch the Torch application:
-::
 
 A Slurm batch script is used to launch the code, such as:
-
 ::
 
     #!/bin/bash
@@ -117,7 +115,7 @@ Each of the containerised applications has its own batch launching script:
 
 
 Singularity Containers
-----------
+----------------------
 
 Singularity 3.7 is installed on compute nodes, it is not available on login nodes. When you build your container, within your own environment, your container you must have the following directories:
 
