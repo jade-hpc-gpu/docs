@@ -38,12 +38,10 @@ purposes; submitting batch jobs is the standard way of working.
 
 The global file system is accessible from both the head nodes and the compute nodes.  Any files written during the job execution on the compute nodes will be found on the file system after the job has completed.
 
-For information on your disk space usage and remaining quota, use the following command ::
+For information on your disk space usage and remaining quota, use the command ``getquota``
 
-  getquota
+For example::
 
-For example:
-::
     getquota
     Disk quotas for usr abc18-wga20 (uid 1234):
     Filesystem    used   quota   limit   grace   files   quota   limit   grace
