@@ -10,11 +10,11 @@ Any files you copy into ``/home_directory`` will have the same userid as normal 
 This is 6.6TB in size but any data will be lost once the interactive session is ended. There are two ways of interacting with the containerised applications.
 
 Docker Containers
-----------------------------
+-----------------
 
 
 Listing available containers
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To list the containers and version available on the system do:
 
