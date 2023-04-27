@@ -42,7 +42,7 @@ Once users have applied with the project code, they will need to be added to the
   3. In the **Password** field, set the desired **project signup code** and press `Update`.
 
 Adding Users to a Project or group(instructions for institutional contacts and project managers)
-----------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
 
 After creating a group, users can be added to a project.
 
