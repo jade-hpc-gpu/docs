@@ -1,7 +1,7 @@
 .. _buildtest:
 
 The BUILD TEST FUBAR
-===================
+====================
 
 Introduction
 ------------
