@@ -38,4 +38,3 @@ The following are the available applications, libraries and development tools on
     molecular-dynamics/index
     python
     git
-    datasets
