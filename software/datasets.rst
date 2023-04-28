@@ -12,10 +12,14 @@ There are a number of application dataset repositories on JADE. These are locate
 Dataset List
 ------------
 
-+--------------+---------------------------------------------------------------+-----------------------------------------+
-| Name         | Description                                                   | Location                                |
-+==============+===============================================================+=========================================+
-| AlphaFold DB | :URL: https://github.com/deepmind/alphafold#genetic-databases | /jmain02/flash/share/datasets/GeneticDB |
-| ImageNet     | ILSVRC2012                                                    | /jmain02/flash/share/datasets/ImageNet  |
-+--------------+---------------------------------------------------------------+-----------------------------------------+
-  
+AlphaFoldDB
+~~~~~~~~~~~
+:URL: https://github.com/deepmind/alphafold#genetic-databases
+:Location: /jmain02/flash/share/datasets/GeneticDB
+
+ImageNet
+~~~~~~~~
+:URL: https://www.image-net.org/about.php
+:Location: /jmain02/flash/share/datasets/ImageNet
+
+
