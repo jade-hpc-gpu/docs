@@ -23,7 +23,7 @@ AlphaFold Database
 ImageNet
 ~~~~~~~~
 :Description: ImageNet Large Scale Visual Recognition Challenge 2012 (ILSVRC2012)
-:URL: https://www.image-net.org/about.php
+:URL: https://www.image-net.org/challenges/LSVRC/2012/
 :Location: /jmain02/flash/share/datasets/ImageNet/ILSVRC2012
 
 
