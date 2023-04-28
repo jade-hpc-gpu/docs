@@ -105,11 +105,11 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
-latex_documents = []
-#latex_documents = [
-#    (master_doc, 'JADE.tex', u'JADE Documentation',
-#     u'Mozhgan K. Chimeh', 'manual'),
-#]
+
+latex_documents = [
+    (master_doc, 'JADE.tex', u'JADE Documentation',
+     u'Mozhgan K. Chimeh', 'manual'),
+]
 
 
 # -- Options for manual page output ---------------------------------------
