@@ -9,6 +9,8 @@ Dataset Repositories
 
 There are a number of application dataset repositories on JADE. These are located in the high-performance partition of the storage device.
 
+The following list details each of the datasets and their location on the filesystem.
+
 Dataset List
 ------------
 
