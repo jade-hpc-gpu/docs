@@ -151,6 +151,11 @@ Once the job submitted, it will sit in a pending state until the resources have 
 
 Once the job starts to run you will see files with names such as ``slurm-1234.out`` either in the directory you submitted the job from (default behaviour) or in the directory where the script was instructed explicitly to change to.
 
+.. note::
+   **Compute nodes (machines that run your submitted jobs) on JADE do not have internet access.** Please ensure your software is already installed and data is downloaded to your home directory before submitting your jobs.
+
+
+
 Job partitions on JADE
 ----------------------
 
