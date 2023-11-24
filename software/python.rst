@@ -41,7 +41,7 @@ Conda version ``4.3.30`` is available for both Python 2 and 3 and can be loaded 
 
 Use the ``module load`` command to load a particular Anaconda Python version e.g. Anaconda for Python 3: ::
 
-  module load python3/anaconda
+  module load python/anaconda3
 
 
 Using conda Environments
