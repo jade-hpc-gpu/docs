@@ -5,7 +5,7 @@ Using Containerised Applications
 
 On entering the container the present working directory will be the user's home directory: ``/home_directory``
 
-Any files you copy into ``/home_directory`` will have the same userid as normal and will be available once exiting the container. The local disk space on the node is available at: ``/raid/local_scratch/$USERID``
+Any files you copy into ``/home_directory`` will have the same userid as normal and will be available once exiting the container. The local disk space on the node is available at: ``/local_scratch/``
 
 This is 6.6TB in size but any data will be lost once the interactive session is ended. There are two ways of interacting with the containerised applications.
 
